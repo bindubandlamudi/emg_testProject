@@ -1,3 +1,14 @@
+/**
+  EMG Signal Processing Header file 
+
+  @File Name
+    signal_processing.h
+
+  @Description
+    This is the implementation file for processing of EMG Signal data on an EMG click by MikroElektronika       
+    This file performs the signal processing operations on the values obtained from the three Circular Buffer Operations
+ */
+
 /* Microchip Technology Inc. and its subsidiaries.  You may use this software 
  * and any derivatives exclusively with Microchip products. 
  * 
@@ -19,25 +30,76 @@
  * TERMS. 
  */
 
-/* 
- * File:   
- * Author: 
- * Comments:
- * Revision history: 
- */
 
 // This is a guard condition so that contents of this file are not included
 // more than once.  
 #ifndef _SIGNAL_PROCESSING_H
 #define	_SIGNAL_PROCESSING_H
 
+/*******************************************************************************************************/
+/*******************************************************************************************************/
+
+
+/**
+  Section: Included Files
+*/
 #include <xc.h> // include processor files - each processor file is guarded.  
 #include "mcc_generated_files/mcc.h"
 #include "signal_buffer.h"
+#include "signal_buffer.h"
 
+
+/*******************************************************************************************************/
+/*******************************************************************************************************/
+
+/**
+ Section: Function definitions
+*/
+
+/**
+  @Function
+    Color_Initialize
+  @Summary
+    Initializes the Color sensor Click Board
+
+  @Description
+    This routine issues commands to initialize the color sensor click board. The module does a I2C write
+    to the enable the click board.
+
+  @Param
+    None
+
+  @Returns
+    None
+
+ */
 uint16_t get_neutral_peaktopeak(uint16_t datapoint);
+
+
+/*******************************************************************************************************/
+/*******************************************************************************************************/
+
+/**
+  @Function
+    Color_Initialize
+  @Summary
+    Initializes the Color sensor Click Board
+
+  @Description
+    This routine issues commands to initialize the color sensor click board. The module does a I2C write
+    to the enable the click board.
+
+  @Param
+    None
+
+  @Returns
+    None
+
+ */
 float get_moving_average(uint16_t datapoint);
 
 
 #endif	/* _SIGNAL_PROCESSING_H */
-
+/**
+ End of File
+*/

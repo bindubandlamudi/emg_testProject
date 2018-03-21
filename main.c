@@ -41,29 +41,20 @@
 */
 
 #include "mcc_generated_files/mcc.h"
-#include "signal_buffer.h"
 #include "peak_filter.h"
-#include "signal_processing.h"
 #include "moving_avg_filter.h"
+#include "signal_buffer.h"
+#include "signal_processing.h"
 #include <stdio.h>
 #include <stdint.h>
 #include <stdbool.h>
 #include <stdlib.h>
 #include <math.h>
 
-// Buffer for acquired EMG data and indices for the Circular Buffer
-
-
-/*
- Arrays in C start from the Index 0. A 0 index on the circular buffer indicates there is already an element present in Array[0] 
- Hence we begin the front and rear pointers of each circular buffer with '-1', so that every advance in the pointer indicates the buffer has an element
- This implementation is used for all three circular buffers used : sb_data (Signal Buffer), pk_data (Peak to Peak Filter) and, ma_data (Moving Average Filter) 
- */
-
-
-
 // Flag that starts data acquisition
 uint8_t start_flag = 0;
+
+// Index for looping elements
 uint8_t i;
 
 // Flags to indicate the character sent over UART to the Slave PIC
@@ -71,16 +62,18 @@ uint8_t sent_1 =0;
 uint8_t sent_0 =0;
 
 
-/*
-                         Main application
- */
 
-
-
+// Custom Interrupt Handler to acquire data from ADC
+// Refer to files tmr6.c and tmr6.h for Timer Interrupt working
 void TMR6_EMG_InterruptHandler(void)
 {
     if (start_flag == 1) {
-        //ADCC_StartConversion(POT_RA0);
+        
+        //Uncomment the line below if you need to test Analog Channel with a Potentiometer
+        //ADCC_StartConversion(POT_RA0); 
+        
+        //ADC Channel selected to be the EMG Click
+        //Make sure to insert the EMG Click on Curiosity HPC MikroBus Slot #2
         ADCC_StartConversion(EMG_RA2);
         
         adc_result_t adval = ADCC_GetConversionResult();
@@ -93,9 +86,12 @@ void TMR6_EMG_InterruptHandler(void)
     }
 }
 
+/*
+                         Main application
+ */
 void main(void)
 {
-   // Initialize the Device
+    // Initialize the Device
     SYSTEM_Initialize();
     // ^-^
 
@@ -114,32 +110,29 @@ void main(void)
     // Disable the Peripheral Interrupts
     //INTERRUPT_PeripheralInterruptDisable();
     
-    // Initialize custom interrupt handler which acquires data from ADC
+    // Initialize custom Interrupt Handler which acquires data from ADC
     TMR6_SetInterruptHandler(TMR6_EMG_InterruptHandler);
     TMR6_Start();
     
-    int count = 0;
-    
+    int count = 0;          //Counter for number of data points in signal buffer
     uint16_t datapoint;
-    
     uint16_t neutral_datapoint, result;
+    uint8_t mode = 0;       //Mode of Action of Prosthetic prototype
+    double time_elapsed;    
+    uint8_t flex_flag, motor_started; //Flags set after events
     
-    uint8_t mode = 0;
-    
-    double time_elapsed;
-    
-    uint8_t flex_flag, motor_started;
-    
+    //Initialize flags
     flex_flag = 0;
     motor_started = 0;
 
     // Mode 0 -- Flex and Release for Motor ON and Motor OFF (LED_RA7 OFF)
     // Mode 1 -- Flex and Flex for Motor ON and Motor OFF (LED_RA7 ON)
+    LED_RA7_SetLow(); //Initialize Mode and Mode-indicator LED to Default Mode 0
     
-    LED_RA7_SetLow();
+    //Select Mode-Switch1 and Start Process-Switch2
     while (1)
     {
-        // Press Switch-1 to change the Mode (Reset Microcontroller after every Mode change)
+        // Press Switch-1 to toggle the Mode (Reset Microcontroller after every Mode change)
         if (MODE_RB4_GetValue() == 0)  
         {
             mode ^= 1;
@@ -147,8 +140,10 @@ void main(void)
             __delay_ms(700);
         }
          
-		// When the flag is cleared and Switch is pressed, the process starts
+		// When the flag is cleared and Switch-2 is pressed, the process starts
         if (START_RC5_GetValue() == 0 && start_flag == 0) {
+            
+            //Uncomment the line below to
             //printf("START\r\n");
             start_flag = 1;
             __delay_ms(700);
@@ -156,12 +151,12 @@ void main(void)
         }
     }
     
+    //Signal Conditioning 
     while (1)
     {
         if(start_flag == 1)
         {
             // Count the number of data points present in signal buffer
-// ******** // todo... is count required anymore ?
             for (i = sb_front; i != sb_rear; i = (i + 1) % SB_DATA_WINDOW) {
                 count++;
             }
@@ -184,19 +179,25 @@ void main(void)
                     // Turn motor at muscle flex & Turn back motor at muscle release
                     if(result>= 25 && sent_1 == 0)
                     {
+                        //Send Character '1' over UART to SLAVE MCU to turn motor Clockwise
                         printf("1");
+                        
+                        //Set and Reset flags 
                         sent_1 = 1;
                         sent_0 = 0;
                     }
                     else if(result<25 && sent_0 == 0)
                     {
+                        //Send Character '0' over UART to SLAVE MCU to turn motor Counter-Clockwise
                         printf("0");
+                        
+                        //Set and Reset flags
                         sent_0 = 1;
                         sent_1 = 0;
                     }
                 }
                 
-                else
+                else //Mode 1
                 {
                     // Turn motor at Muscle flex & Turn back motor at next muscle flex
                     if(result>= 25 && flex_flag == 0)
@@ -221,8 +222,7 @@ void main(void)
                         flex_flag = 0;
                     }
                 }
-                // **** todo...Reject/ donot consider result until atleast 2*MIN_PK_GAP is calculated ????
-                
+                                
                 // Remove the first element (in FIFO order) since it has already been processed
                 sbuf_remove();
                 

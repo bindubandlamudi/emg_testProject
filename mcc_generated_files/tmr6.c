@@ -173,14 +173,17 @@ void TMR6_ISR(void)
     }
 }
 
-
+// Custom function for acquiring EMG data has been set in main.c 
+// Look for the function 'TMR6_EMG_InterruptHandler()' in main.c
 void TMR6_SetInterruptHandler(void (* InterruptHandler)(void)){
     TMR6_InterruptHandler = InterruptHandler;
 }
 
+
 void TMR6_DefaultInterruptHandler(void){
     // add your TMR6 interrupt custom code
     // or set custom function using TMR6_SetInterruptHandler()
+    
 }
 
 /**

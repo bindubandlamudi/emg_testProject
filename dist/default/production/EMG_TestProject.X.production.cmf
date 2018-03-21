@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\C20590\AppData\Local\Temp\slq0.obj
+$C:\Users\C20590\AppData\Local\Temp\s3js.obj
 reset_vec CODE 0 0 0 2 2
 end_init CODE 0 24 24 2 2
 config CONFIG 0 8007 8007 5 2
@@ -169,55 +169,55 @@ STRING 1004-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\EMG_TestProject.X.production.obj
-26 cinit CODE >12395:C:\Users\C20590\AppData\Local\Temp\slq0.
-26 cinit CODE >12398:C:\Users\C20590\AppData\Local\Temp\slq0.
-26 cinit CODE >12491:C:\Users\C20590\AppData\Local\Temp\slq0.
-27 cinit CODE >12492:C:\Users\C20590\AppData\Local\Temp\slq0.
-28 cinit CODE >12493:C:\Users\C20590\AppData\Local\Temp\slq0.
-29 cinit CODE >12494:C:\Users\C20590\AppData\Local\Temp\slq0.
-2A cinit CODE >12495:C:\Users\C20590\AppData\Local\Temp\slq0.
-2B cinit CODE >12496:C:\Users\C20590\AppData\Local\Temp\slq0.
-2C cinit CODE >12497:C:\Users\C20590\AppData\Local\Temp\slq0.
-2D cinit CODE >12498:C:\Users\C20590\AppData\Local\Temp\slq0.
-2E cinit CODE >12499:C:\Users\C20590\AppData\Local\Temp\slq0.
-2F cinit CODE >12500:C:\Users\C20590\AppData\Local\Temp\slq0.
-30 cinit CODE >12501:C:\Users\C20590\AppData\Local\Temp\slq0.
-31 cinit CODE >12502:C:\Users\C20590\AppData\Local\Temp\slq0.
-32 cinit CODE >12503:C:\Users\C20590\AppData\Local\Temp\slq0.
-33 cinit CODE >12504:C:\Users\C20590\AppData\Local\Temp\slq0.
-34 cinit CODE >12505:C:\Users\C20590\AppData\Local\Temp\slq0.
-35 cinit CODE >12506:C:\Users\C20590\AppData\Local\Temp\slq0.
-36 cinit CODE >12529:C:\Users\C20590\AppData\Local\Temp\slq0.
-37 cinit CODE >12530:C:\Users\C20590\AppData\Local\Temp\slq0.
-38 cinit CODE >12531:C:\Users\C20590\AppData\Local\Temp\slq0.
-39 cinit CODE >12532:C:\Users\C20590\AppData\Local\Temp\slq0.
-3A cinit CODE >12533:C:\Users\C20590\AppData\Local\Temp\slq0.
-3B cinit CODE >12534:C:\Users\C20590\AppData\Local\Temp\slq0.
-3C cinit CODE >12535:C:\Users\C20590\AppData\Local\Temp\slq0.
-3D cinit CODE >12536:C:\Users\C20590\AppData\Local\Temp\slq0.
-3E cinit CODE >12537:C:\Users\C20590\AppData\Local\Temp\slq0.
-41 cinit CODE >12541:C:\Users\C20590\AppData\Local\Temp\slq0.
-42 cinit CODE >12542:C:\Users\C20590\AppData\Local\Temp\slq0.
-43 cinit CODE >12543:C:\Users\C20590\AppData\Local\Temp\slq0.
-44 cinit CODE >12544:C:\Users\C20590\AppData\Local\Temp\slq0.
-45 cinit CODE >12545:C:\Users\C20590\AppData\Local\Temp\slq0.
-46 cinit CODE >12546:C:\Users\C20590\AppData\Local\Temp\slq0.
-47 cinit CODE >12547:C:\Users\C20590\AppData\Local\Temp\slq0.
-48 cinit CODE >12548:C:\Users\C20590\AppData\Local\Temp\slq0.
-49 cinit CODE >12549:C:\Users\C20590\AppData\Local\Temp\slq0.
-4C cinit CODE >12553:C:\Users\C20590\AppData\Local\Temp\slq0.
-4D cinit CODE >12554:C:\Users\C20590\AppData\Local\Temp\slq0.
-4E cinit CODE >12555:C:\Users\C20590\AppData\Local\Temp\slq0.
-4F cinit CODE >12556:C:\Users\C20590\AppData\Local\Temp\slq0.
-50 cinit CODE >12557:C:\Users\C20590\AppData\Local\Temp\slq0.
-51 cinit CODE >12558:C:\Users\C20590\AppData\Local\Temp\slq0.
-52 cinit CODE >12559:C:\Users\C20590\AppData\Local\Temp\slq0.
-53 cinit CODE >12560:C:\Users\C20590\AppData\Local\Temp\slq0.
-54 cinit CODE >12561:C:\Users\C20590\AppData\Local\Temp\slq0.
-56 cinit CODE >12567:C:\Users\C20590\AppData\Local\Temp\slq0.
-56 cinit CODE >12569:C:\Users\C20590\AppData\Local\Temp\slq0.
-57 cinit CODE >12570:C:\Users\C20590\AppData\Local\Temp\slq0.
-58 cinit CODE >12571:C:\Users\C20590\AppData\Local\Temp\slq0.
+26 cinit CODE >12395:C:\Users\C20590\AppData\Local\Temp\s3js.
+26 cinit CODE >12398:C:\Users\C20590\AppData\Local\Temp\s3js.
+26 cinit CODE >12491:C:\Users\C20590\AppData\Local\Temp\s3js.
+27 cinit CODE >12492:C:\Users\C20590\AppData\Local\Temp\s3js.
+28 cinit CODE >12493:C:\Users\C20590\AppData\Local\Temp\s3js.
+29 cinit CODE >12494:C:\Users\C20590\AppData\Local\Temp\s3js.
+2A cinit CODE >12495:C:\Users\C20590\AppData\Local\Temp\s3js.
+2B cinit CODE >12496:C:\Users\C20590\AppData\Local\Temp\s3js.
+2C cinit CODE >12497:C:\Users\C20590\AppData\Local\Temp\s3js.
+2D cinit CODE >12498:C:\Users\C20590\AppData\Local\Temp\s3js.
+2E cinit CODE >12499:C:\Users\C20590\AppData\Local\Temp\s3js.
+2F cinit CODE >12500:C:\Users\C20590\AppData\Local\Temp\s3js.
+30 cinit CODE >12501:C:\Users\C20590\AppData\Local\Temp\s3js.
+31 cinit CODE >12502:C:\Users\C20590\AppData\Local\Temp\s3js.
+32 cinit CODE >12503:C:\Users\C20590\AppData\Local\Temp\s3js.
+33 cinit CODE >12504:C:\Users\C20590\AppData\Local\Temp\s3js.
+34 cinit CODE >12505:C:\Users\C20590\AppData\Local\Temp\s3js.
+35 cinit CODE >12506:C:\Users\C20590\AppData\Local\Temp\s3js.
+36 cinit CODE >12529:C:\Users\C20590\AppData\Local\Temp\s3js.
+37 cinit CODE >12530:C:\Users\C20590\AppData\Local\Temp\s3js.
+38 cinit CODE >12531:C:\Users\C20590\AppData\Local\Temp\s3js.
+39 cinit CODE >12532:C:\Users\C20590\AppData\Local\Temp\s3js.
+3A cinit CODE >12533:C:\Users\C20590\AppData\Local\Temp\s3js.
+3B cinit CODE >12534:C:\Users\C20590\AppData\Local\Temp\s3js.
+3C cinit CODE >12535:C:\Users\C20590\AppData\Local\Temp\s3js.
+3D cinit CODE >12536:C:\Users\C20590\AppData\Local\Temp\s3js.
+3E cinit CODE >12537:C:\Users\C20590\AppData\Local\Temp\s3js.
+41 cinit CODE >12541:C:\Users\C20590\AppData\Local\Temp\s3js.
+42 cinit CODE >12542:C:\Users\C20590\AppData\Local\Temp\s3js.
+43 cinit CODE >12543:C:\Users\C20590\AppData\Local\Temp\s3js.
+44 cinit CODE >12544:C:\Users\C20590\AppData\Local\Temp\s3js.
+45 cinit CODE >12545:C:\Users\C20590\AppData\Local\Temp\s3js.
+46 cinit CODE >12546:C:\Users\C20590\AppData\Local\Temp\s3js.
+47 cinit CODE >12547:C:\Users\C20590\AppData\Local\Temp\s3js.
+48 cinit CODE >12548:C:\Users\C20590\AppData\Local\Temp\s3js.
+49 cinit CODE >12549:C:\Users\C20590\AppData\Local\Temp\s3js.
+4C cinit CODE >12553:C:\Users\C20590\AppData\Local\Temp\s3js.
+4D cinit CODE >12554:C:\Users\C20590\AppData\Local\Temp\s3js.
+4E cinit CODE >12555:C:\Users\C20590\AppData\Local\Temp\s3js.
+4F cinit CODE >12556:C:\Users\C20590\AppData\Local\Temp\s3js.
+50 cinit CODE >12557:C:\Users\C20590\AppData\Local\Temp\s3js.
+51 cinit CODE >12558:C:\Users\C20590\AppData\Local\Temp\s3js.
+52 cinit CODE >12559:C:\Users\C20590\AppData\Local\Temp\s3js.
+53 cinit CODE >12560:C:\Users\C20590\AppData\Local\Temp\s3js.
+54 cinit CODE >12561:C:\Users\C20590\AppData\Local\Temp\s3js.
+56 cinit CODE >12567:C:\Users\C20590\AppData\Local\Temp\s3js.
+56 cinit CODE >12569:C:\Users\C20590\AppData\Local\Temp\s3js.
+57 cinit CODE >12570:C:\Users\C20590\AppData\Local\Temp\s3js.
+58 cinit CODE >12571:C:\Users\C20590\AppData\Local\Temp\s3js.
 4 intentry CODE >51:C:\Users\C20590\MPLABXProjects\EMG_TestProject.X\mcc_generated_files/interrupt_manager.c
 9 intentry CODE >54:C:\Users\C20590\MPLABXProjects\EMG_TestProject.X\mcc_generated_files/interrupt_manager.c
 B intentry CODE >56:C:\Users\C20590\MPLABXProjects\EMG_TestProject.X\mcc_generated_files/interrupt_manager.c
@@ -700,20 +700,20 @@ FF maintext CODE >180:C:\Users\C20590\MPLABXProjects\EMG_TestProject.X\main.c
 196 maintext CODE >229:C:\Users\C20590\MPLABXProjects\EMG_TestProject.X\main.c
 1B8 maintext CODE >232:C:\Users\C20590\MPLABXProjects\EMG_TestProject.X\main.c
 1BB maintext CODE >159:C:\Users\C20590\MPLABXProjects\EMG_TestProject.X\main.c
-FBE clrtext CODE >12512:C:\Users\C20590\AppData\Local\Temp\slq0.
-FBE clrtext CODE >12513:C:\Users\C20590\AppData\Local\Temp\slq0.
-FBF clrtext CODE >12514:C:\Users\C20590\AppData\Local\Temp\slq0.
-FBF clrtext CODE >12515:C:\Users\C20590\AppData\Local\Temp\slq0.
-FC0 clrtext CODE >12516:C:\Users\C20590\AppData\Local\Temp\slq0.
-FC1 clrtext CODE >12517:C:\Users\C20590\AppData\Local\Temp\slq0.
-FC2 clrtext CODE >12518:C:\Users\C20590\AppData\Local\Temp\slq0.
-FC3 clrtext CODE >12519:C:\Users\C20590\AppData\Local\Temp\slq0.
-FC4 clrtext CODE >12520:C:\Users\C20590\AppData\Local\Temp\slq0.
-FC5 clrtext CODE >12521:C:\Users\C20590\AppData\Local\Temp\slq0.
-FC6 clrtext CODE >12522:C:\Users\C20590\AppData\Local\Temp\slq0.
-FC7 clrtext CODE >12523:C:\Users\C20590\AppData\Local\Temp\slq0.
-FC8 clrtext CODE >12525:C:\Users\C20590\AppData\Local\Temp\slq0.
-FC9 clrtext CODE >12524:C:\Users\C20590\AppData\Local\Temp\slq0.
+FBE clrtext CODE >12512:C:\Users\C20590\AppData\Local\Temp\s3js.
+FBE clrtext CODE >12513:C:\Users\C20590\AppData\Local\Temp\s3js.
+FBF clrtext CODE >12514:C:\Users\C20590\AppData\Local\Temp\s3js.
+FBF clrtext CODE >12515:C:\Users\C20590\AppData\Local\Temp\s3js.
+FC0 clrtext CODE >12516:C:\Users\C20590\AppData\Local\Temp\s3js.
+FC1 clrtext CODE >12517:C:\Users\C20590\AppData\Local\Temp\s3js.
+FC2 clrtext CODE >12518:C:\Users\C20590\AppData\Local\Temp\s3js.
+FC3 clrtext CODE >12519:C:\Users\C20590\AppData\Local\Temp\s3js.
+FC4 clrtext CODE >12520:C:\Users\C20590\AppData\Local\Temp\s3js.
+FC5 clrtext CODE >12521:C:\Users\C20590\AppData\Local\Temp\s3js.
+FC6 clrtext CODE >12522:C:\Users\C20590\AppData\Local\Temp\s3js.
+FC7 clrtext CODE >12523:C:\Users\C20590\AppData\Local\Temp\s3js.
+FC8 clrtext CODE >12525:C:\Users\C20590\AppData\Local\Temp\s3js.
+FC9 clrtext CODE >12524:C:\Users\C20590\AppData\Local\Temp\s3js.
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -762,7 +762,7 @@ _WPUB F44 0 ABS 0 - dist/default/production\EMG_TestProject.X.production.obj
 _WPUC F4F 0 ABS 0 - dist/default/production\EMG_TestProject.X.production.obj
 _WPUD F5A 0 ABS 0 - dist/default/production\EMG_TestProject.X.production.obj
 _WPUE F65 0 ABS 0 - dist/default/production\EMG_TestProject.X.production.obj
-___sp 0 0 STACK 2 stack C:\Users\C20590\AppData\Local\Temp\slq0.obj
+___sp 0 0 STACK 2 stack C:\Users\C20590\AppData\Local\Temp\s3js.obj
 _main B4 0 CODE 0 maintext dist/default/production\EMG_TestProject.X.production.obj
 __end_of_pkdata_remove C3E 0 CODE 0 text8 dist/default/production\EMG_TestProject.X.production.obj
 abs@a 23 0 BANK0 1 cstackBANK0 dist/default/production\EMG_TestProject.X.production.obj
@@ -771,7 +771,7 @@ btemp 7E 0 ABS 0 - dist/default/production\EMG_TestProject.X.production.obj
 __size_of_madata_isfull 0 0 ABS 0 - dist/default/production\EMG_TestProject.X.production.obj
 ___ftadd@f1 2B 0 BANK0 1 cstackBANK0 dist/default/production\EMG_TestProject.X.production.obj
 ___ftadd@f2 2E 0 BANK0 1 cstackBANK0 dist/default/production\EMG_TestProject.X.production.obj
-start 48 0 CODE 0 init C:\Users\C20590\AppData\Local\Temp\slq0.obj
+start 48 0 CODE 0 init C:\Users\C20590\AppData\Local\Temp\s3js.obj
 _EUSART_Write D2E 0 CODE 0 text6 dist/default/production\EMG_TestProject.X.production.obj
 __size_of___awmod 0 0 ABS 0 - dist/default/production\EMG_TestProject.X.production.obj
 __size_of_TMR6_Initialize 0 0 ABS 0 - dist/default/production\EMG_TestProject.X.production.obj
@@ -792,12 +792,12 @@ ___awmod@sign 29 0 BANK0 1 cstackBANK0 dist/default/production\EMG_TestProject.X
 ADCC_StartConversion@channel 70 0 COMMON 1 cstackCOMMON dist/default/production\EMG_TestProject.X.production.obj
 __size_of_SYSTEM_Initialize 0 0 ABS 0 - dist/default/production\EMG_TestProject.X.production.obj
 _T6HLTbits 29B 0 ABS 0 - dist/default/production\EMG_TestProject.X.production.obj
-intlevel0 0 0 ENTRY 0 functab C:\Users\C20590\AppData\Local\Temp\slq0.obj
-intlevel1 0 0 ENTRY 0 functab C:\Users\C20590\AppData\Local\Temp\slq0.obj
-intlevel2 0 0 ENTRY 0 functab C:\Users\C20590\AppData\Local\Temp\slq0.obj
-intlevel3 0 0 ENTRY 0 functab C:\Users\C20590\AppData\Local\Temp\slq0.obj
-intlevel4 0 0 ENTRY 0 functab C:\Users\C20590\AppData\Local\Temp\slq0.obj
-intlevel5 0 0 ENTRY 0 functab C:\Users\C20590\AppData\Local\Temp\slq0.obj
+intlevel0 0 0 ENTRY 0 functab C:\Users\C20590\AppData\Local\Temp\s3js.obj
+intlevel1 0 0 ENTRY 0 functab C:\Users\C20590\AppData\Local\Temp\s3js.obj
+intlevel2 0 0 ENTRY 0 functab C:\Users\C20590\AppData\Local\Temp\s3js.obj
+intlevel3 0 0 ENTRY 0 functab C:\Users\C20590\AppData\Local\Temp\s3js.obj
+intlevel4 0 0 ENTRY 0 functab C:\Users\C20590\AppData\Local\Temp\s3js.obj
+intlevel5 0 0 ENTRY 0 functab C:\Users\C20590\AppData\Local\Temp\s3js.obj
 i1___lwdiv@quotient 75 0 COMMON 1 cstackCOMMON dist/default/production\EMG_TestProject.X.production.obj
 __end_of_madata_insert D2E 0 CODE 0 text15 dist/default/production\EMG_TestProject.X.production.obj
 _get_moving_average 962 0 CODE 0 text12 dist/default/production\EMG_TestProject.X.production.obj
@@ -904,7 +904,7 @@ __end_of_printf EC0 0 CODE 0 text4 dist/default/production\EMG_TestProject.X.pro
 ___ftpack@arg 23 0 BANK0 1 cstackBANK0 dist/default/production\EMG_TestProject.X.production.obj
 ___ftpack@exp 26 0 BANK0 1 cstackBANK0 dist/default/production\EMG_TestProject.X.production.obj
 __end_of_ADCC_Initialize FBC 0 CODE 0 text32 dist/default/production\EMG_TestProject.X.production.obj
-___int_sp 0 0 STACK 2 stack C:\Users\C20590\AppData\Local\Temp\slq0.obj
+___int_sp 0 0 STACK 2 stack C:\Users\C20590\AppData\Local\Temp\s3js.obj
 sbuf_insert@element 78 0 COMMON 1 cstackCOMMON dist/default/production\EMG_TestProject.X.production.obj
 __end_of___ftpack 84C 0 CODE 0 text23 dist/default/production\EMG_TestProject.X.production.obj
 __Hbank0 0 0 ABS 0 bank0 -
@@ -1080,7 +1080,7 @@ __Lintentry 8 0 CODE 0 intentry -
 main@datapoint 129 0 BANK2 1 cstackBANK2 dist/default/production\EMG_TestProject.X.production.obj
 __end_of_sbuf_peek FE6 0 CODE 0 text3 dist/default/production\EMG_TestProject.X.production.obj
 _TMR6_SetInterruptHandler 1F56 0 CODE 0 text27 dist/default/production\EMG_TestProject.X.production.obj
-reset_vec 0 0 CODE 0 reset_vec C:\Users\C20590\AppData\Local\Temp\slq0.obj
+reset_vec 0 0 CODE 0 reset_vec C:\Users\C20590\AppData\Local\Temp\s3js.obj
 __size_of_sbuf_insert 0 0 ABS 0 - dist/default/production\EMG_TestProject.X.production.obj
 __size_of_sbuf_isfull 0 0 ABS 0 - dist/default/production\EMG_TestProject.X.production.obj
 _T6CLKCON 29C 0 ABS 0 - dist/default/production\EMG_TestProject.X.production.obj
@@ -1196,8 +1196,8 @@ __end_of_sbuf_isempty 1F56 0 CODE 0 text2 dist/default/production\EMG_TestProjec
 _sb_front 60 0 BANK0 1 dataBANK0 dist/default/production\EMG_TestProject.X.production.obj
 __size_of_ADCC_StartConversion 0 0 ABS 0 - dist/default/production\EMG_TestProject.X.production.obj
 ___lwtoft@c 2B 0 BANK0 1 cstackBANK0 dist/default/production\EMG_TestProject.X.production.obj
-stackhi 238B 0 ABS 0 - C:\Users\C20590\AppData\Local\Temp\slq0.obj
-stacklo 20AE 0 ABS 0 - C:\Users\C20590\AppData\Local\Temp\slq0.obj
+stackhi 238B 0 ABS 0 - C:\Users\C20590\AppData\Local\Temp\s3js.obj
+stacklo 20AE 0 ABS 0 - C:\Users\C20590\AppData\Local\Temp\s3js.obj
 get_neutral_peaktopeak@datapoint 2D 0 BANK0 1 cstackBANK0 dist/default/production\EMG_TestProject.X.production.obj
 _OSCCON1 88D 0 ABS 0 - dist/default/production\EMG_TestProject.X.production.obj
 _OSCCON3 88F 0 ABS 0 - dist/default/production\EMG_TestProject.X.production.obj
