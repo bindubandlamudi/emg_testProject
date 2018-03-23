@@ -18671,26 +18671,47 @@ void OSCILLATOR_Initialize(void);
 # 97
 void PMD_Initialize(void);
 
-# 50 "signal_buffer.h"
+# 82 "signal_buffer.h"
 uint16_t sb_data[50];
+
+# 89
 int8_t sb_front = -1;
 int8_t sb_rear = -1;
 
+# 118
 bool sbuf_isfull(void);
+
+# 142
 bool sbuf_isempty(void);
+
+# 167
 bool sbuf_insert(uint16_t element);
+
+# 192
 bool sbuf_remove(void);
+
+# 218
 uint16_t sbuf_peek(void);
 
-# 41 "moving_avg_filter.h"
+# 71 "moving_avg_filter.h"
 uint16_t ma_data[((int)(50 * 0.5)+1)];
+
+# 78
 int8_t ma_front = -1;
 int8_t ma_rear = -1;
+
 uint16_t ma_window_sum = 0;
 
+# 109
 bool madata_isfull(void);
+
+# 135
 bool madata_isempty(void);
+
+# 161
 bool madata_insert(uint16_t element);
+
+# 187
 bool madata_remove(void);
 
 # 30 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\math.h"
@@ -18790,22 +18811,27 @@ extern char * ultoa(char * buf, unsigned long val, int base);
 
 extern char * ftoa(float f, int * status);
 
-# 9 "moving_avg_filter.c"
-bool madata_isfull() {
+# 54 "moving_avg_filter.c"
+bool madata_isfull(void)
+{
 if ((ma_front == ma_rear + 1) || (ma_front == 0 && ma_rear == ((int)(50 * 0.5)+1) - 1))
 return 1;
 else
 return 0;
 }
 
-bool madata_isempty() {
+
+bool madata_isempty(void)
+{
 if (ma_front == -1)
 return 1;
 else
 return 0;
 }
 
-bool madata_insert(uint16_t element) {
+
+bool madata_insert(uint16_t element)
+{
 if (madata_isfull()) {
 
 return 0;
@@ -18818,7 +18844,9 @@ return 1;
 }
 }
 
-bool madata_remove() {
+
+bool madata_remove(void)
+{
 uint16_t element;
 if (madata_isempty()) {
 return 0;
@@ -18833,3 +18861,4 @@ ma_front = (ma_front + 1) % ((int)(50 * 0.5)+1);
 return 1;
 }
 }
+

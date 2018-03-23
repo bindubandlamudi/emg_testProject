@@ -3,7 +3,7 @@
 [d edition pro ]
 [d chip 16F18875 ]
 [d frameptr 6 ]
-"84 C:\Users\C20590\MPLABXProjects\EMG_TestProject.X\main.c
+"75 C:\Users\C20590\MPLABXProjects\EMG_TestProject.X\main.c
 [e E14965 . `uc
 POT_RA0 0
 EMG_RA2 2
@@ -88,9 +88,9 @@ TMR6_CLC4_OUT 17
 [v _eecpymem eecpymem `(v  1 e 1 0 ]
 "39
 [v _memcpyee memcpyee `(v  1 e 1 0 ]
-"80 C:\Users\C20590\MPLABXProjects\EMG_TestProject.X\main.c
+"66 C:\Users\C20590\MPLABXProjects\EMG_TestProject.X\main.c
 [v _TMR6_EMG_InterruptHandler TMR6_EMG_InterruptHandler `(v  1 e 1 0 ]
-"96
+"90
 [v _main main `(v  1 e 1 0 ]
 "62 C:\Users\C20590\MPLABXProjects\EMG_TestProject.X\mcc_generated_files/adcc.c
 [v _ADCC_Initialize ADCC_Initialize `(v  1 e 1 0 ]
@@ -134,39 +134,39 @@ TMR6_CLC4_OUT 17
 [v _TMR6_Period8BitSet TMR6_Period8BitSet `(v  1 e 1 0 ]
 "164
 [v _TMR6_ISR TMR6_ISR `(v  1 e 1 0 ]
-"177
+"178
 [v _TMR6_SetInterruptHandler TMR6_SetInterruptHandler `(v  1 e 1 0 ]
-"181
+"183
 [v _TMR6_DefaultInterruptHandler TMR6_DefaultInterruptHandler `(v  1 e 1 0 ]
-"9 C:\Users\C20590\MPLABXProjects\EMG_TestProject.X\moving_avg_filter.c
+"54 C:\Users\C20590\MPLABXProjects\EMG_TestProject.X\moving_avg_filter.c
 [v _madata_isfull madata_isfull `(uc  1 e 1 0 ]
-"16
-[v _madata_isempty madata_isempty `(uc  1 e 1 0 ]
-"23
-[v _madata_insert madata_insert `(uc  1 e 1 0 ]
-"36
-[v _madata_remove madata_remove `(uc  1 e 1 0 ]
-"9 C:\Users\C20590\MPLABXProjects\EMG_TestProject.X\peak_filter.c
-[v _pkdata_isfull pkdata_isfull `(uc  1 e 1 0 ]
-"18
-[v _pkdata_isempty pkdata_isempty `(uc  1 e 1 0 ]
-"25
-[v _pkdata_insert pkdata_insert `(uc  1 e 1 0 ]
-"38
-[v _pkdata_remove pkdata_remove `(uc  1 e 1 0 ]
-"9 C:\Users\C20590\MPLABXProjects\EMG_TestProject.X\signal_buffer.c
-[v _sbuf_isfull sbuf_isfull `(uc  1 e 1 0 ]
-"17
-[v _sbuf_isempty sbuf_isempty `(uc  1 e 1 0 ]
-"25
-[v _sbuf_insert sbuf_insert `(uc  1 e 1 0 ]
-"43
-[v _sbuf_remove sbuf_remove `(uc  1 e 1 0 ]
 "63
+[v _madata_isempty madata_isempty `(uc  1 e 1 0 ]
+"72
+[v _madata_insert madata_insert `(uc  1 e 1 0 ]
+"87
+[v _madata_remove madata_remove `(uc  1 e 1 0 ]
+"54 C:\Users\C20590\MPLABXProjects\EMG_TestProject.X\peak_filter.c
+[v _pkdata_isfull pkdata_isfull `(uc  1 e 1 0 ]
+"63
+[v _pkdata_isempty pkdata_isempty `(uc  1 e 1 0 ]
+"72
+[v _pkdata_insert pkdata_insert `(uc  1 e 1 0 ]
+"87
+[v _pkdata_remove pkdata_remove `(uc  1 e 1 0 ]
+"52 C:\Users\C20590\MPLABXProjects\EMG_TestProject.X\signal_buffer.c
+[v _sbuf_isfull sbuf_isfull `(uc  1 e 1 0 ]
+"61
+[v _sbuf_isempty sbuf_isempty `(uc  1 e 1 0 ]
+"70
+[v _sbuf_insert sbuf_insert `(uc  1 e 1 0 ]
+"89
+[v _sbuf_remove sbuf_remove `(uc  1 e 1 0 ]
+"110
 [v _sbuf_peek sbuf_peek `(ui  1 e 2 0 ]
-"14 C:\Users\C20590\MPLABXProjects\EMG_TestProject.X\signal_processing.c
+"57 C:\Users\C20590\MPLABXProjects\EMG_TestProject.X\signal_processing.c
 [v _get_neutral_peaktopeak get_neutral_peaktopeak `(ui  1 e 2 0 ]
-"49
+"99
 [v _get_moving_average get_moving_average `(f  1 e 3 0 ]
 [s S79 . 1 `uc 1 INTEDG 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
@@ -603,13 +603,13 @@ TMR6_CLC4_OUT 17
 [v _WPUE WPUE `VEuc  1 e 1 @3941 ]
 "36186
 [v _ODCONE ODCONE `VEuc  1 e 1 @3942 ]
-"66 C:\Users\C20590\MPLABXProjects\EMG_TestProject.X\main.c
+"55 C:\Users\C20590\MPLABXProjects\EMG_TestProject.X\main.c
 [v _start_flag start_flag `uc  1 e 1 0 ]
-"67
+"58
 [v _i i `uc  1 e 1 0 ]
-"70
+"61
 [v _sent_1 sent_1 `uc  1 e 1 0 ]
-"71
+"62
 [v _sent_0 sent_0 `uc  1 e 1 0 ]
 "59 C:\Users\C20590\MPLABXProjects\EMG_TestProject.X\mcc_generated_files/eusart.c
 [v _eusartTxHead eusartTxHead `VEuc  1 e 1 0 ]
@@ -629,62 +629,62 @@ TMR6_CLC4_OUT 17
 [v _eusartRxCount eusartRxCount `VEuc  1 e 1 0 ]
 "57 C:\Users\C20590\MPLABXProjects\EMG_TestProject.X\mcc_generated_files/tmr6.c
 [v _TMR6_InterruptHandler TMR6_InterruptHandler `*.37(v  1 e 2 0 ]
-"41 C:\Users\C20590\MPLABXProjects\EMG_TestProject.X\moving_avg_filter.h
+"71 C:\Users\C20590\MPLABXProjects\EMG_TestProject.X\moving_avg_filter.h
 [v _ma_data ma_data `[26]ui  1 e 52 0 ]
-"42
+"78
 [v _ma_front ma_front `c  1 e 1 0 ]
-"43
+"79
 [v _ma_rear ma_rear `c  1 e 1 0 ]
-"44
+"81
 [v _ma_window_sum ma_window_sum `ui  1 e 2 0 ]
-"42 C:\Users\C20590\MPLABXProjects\EMG_TestProject.X\peak_filter.h
+"72 C:\Users\C20590\MPLABXProjects\EMG_TestProject.X\peak_filter.h
 [v _pk_data pk_data `[5]ui  1 e 10 0 ]
-"43
+"79
 [v _pk_front pk_front `c  1 e 1 0 ]
-"44
+"80
 [v _pk_rear pk_rear `c  1 e 1 0 ]
-"50 C:\Users\C20590\MPLABXProjects\EMG_TestProject.X\signal_buffer.h
+"82 C:\Users\C20590\MPLABXProjects\EMG_TestProject.X\signal_buffer.h
 [v _sb_data sb_data `[50]ui  1 e 100 @9100 ]
-"51
+"89
 [v _sb_front sb_front `c  1 e 1 0 ]
-"52
+"90
 [v _sb_rear sb_rear `c  1 e 1 0 ]
-"96 C:\Users\C20590\MPLABXProjects\EMG_TestProject.X\main.c
+"90 C:\Users\C20590\MPLABXProjects\EMG_TestProject.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"129
+"119
 [v main@time_elapsed time_elapsed `d  1 a 3 0 ]
-"125
+"117
 [v main@result result `ui  1 a 2 12 ]
-"123
+"116
 [v main@datapoint datapoint `ui  1 a 2 9 ]
-"121
+"115
 [v main@count count `i  1 a 2 6 ]
-"125
+"117
 [v main@neutral_datapoint neutral_datapoint `ui  1 a 2 3 ]
-"131
+"120
 [v main@flex_flag flex_flag `uc  1 a 1 11 ]
 [v main@motor_started motor_started `uc  1 a 1 8 ]
-"127
+"118
 [v main@mode mode `uc  1 a 1 5 ]
-"235
+"234
 } 0
-"43 C:\Users\C20590\MPLABXProjects\EMG_TestProject.X\signal_buffer.c
+"89 C:\Users\C20590\MPLABXProjects\EMG_TestProject.X\signal_buffer.c
 [v _sbuf_remove sbuf_remove `(uc  1 e 1 0 ]
 {
-"44
+"91
 [v sbuf_remove@element element `ui  1 a 2 14 ]
-"60
+"107
 } 0
-"17
+"61
 [v _sbuf_isempty sbuf_isempty `(uc  1 e 1 0 ]
 {
-"22
+"67
 } 0
-"63
+"110
 [v _sbuf_peek sbuf_peek `(ui  1 e 2 0 ]
 {
-"65
+"113
 } 0
 "464 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\doprnt.c
 [v _printf printf `(i  1 e 2 0 ]
@@ -714,72 +714,72 @@ TMR6_CLC4_OUT 17
 [v EUSART_Write@txData txData `uc  1 a 1 4 ]
 "149
 } 0
-"14 C:\Users\C20590\MPLABXProjects\EMG_TestProject.X\signal_processing.c
+"57 C:\Users\C20590\MPLABXProjects\EMG_TestProject.X\signal_processing.c
 [v _get_neutral_peaktopeak get_neutral_peaktopeak `(ui  1 e 2 0 ]
 {
-"25
+"70
 [v get_neutral_peaktopeak@lowest_peak lowest_peak `ui  1 a 2 23 ]
-"24
+"69
 [v get_neutral_peaktopeak@highest_peak highest_peak `ui  1 a 2 21 ]
-"26
+"71
 [v get_neutral_peaktopeak@neutral neutral `ui  1 a 2 19 ]
-"28
+"73
 [v get_neutral_peaktopeak@i i `uc  1 a 1 25 ]
-"14
+"57
 [v get_neutral_peaktopeak@datapoint datapoint `ui  1 p 2 13 ]
-"45
+"92
 } 0
-"38 C:\Users\C20590\MPLABXProjects\EMG_TestProject.X\peak_filter.c
+"87 C:\Users\C20590\MPLABXProjects\EMG_TestProject.X\peak_filter.c
 [v _pkdata_remove pkdata_remove `(uc  1 e 1 0 ]
 {
-"39
+"89
 [v pkdata_remove@element element `ui  1 a 2 11 ]
-"52
+"102
 } 0
-"18
+"63
 [v _pkdata_isempty pkdata_isempty `(uc  1 e 1 0 ]
 {
-"23
+"69
 } 0
-"25
+"72
 [v _pkdata_insert pkdata_insert `(uc  1 e 1 0 ]
 {
 [v pkdata_insert@element element `ui  1 p 2 10 ]
-"36
+"84
 } 0
-"9
+"54
 [v _pkdata_isfull pkdata_isfull `(uc  1 e 1 0 ]
 {
-"14
+"60
 } 0
-"49 C:\Users\C20590\MPLABXProjects\EMG_TestProject.X\signal_processing.c
+"99 C:\Users\C20590\MPLABXProjects\EMG_TestProject.X\signal_processing.c
 [v _get_moving_average get_moving_average `(f  1 e 3 0 ]
 {
 [v get_moving_average@datapoint datapoint `ui  1 p 2 15 ]
-"62
+"115
 } 0
-"36 C:\Users\C20590\MPLABXProjects\EMG_TestProject.X\moving_avg_filter.c
+"87 C:\Users\C20590\MPLABXProjects\EMG_TestProject.X\moving_avg_filter.c
 [v _madata_remove madata_remove `(uc  1 e 1 0 ]
 {
-"37
+"89
 [v madata_remove@element element `ui  1 a 2 11 ]
-"50
+"102
 } 0
-"16
+"63
 [v _madata_isempty madata_isempty `(uc  1 e 1 0 ]
 {
-"21
+"69
 } 0
-"23
+"72
 [v _madata_insert madata_insert `(uc  1 e 1 0 ]
 {
 [v madata_insert@element element `ui  1 p 2 10 ]
-"34
+"84
 } 0
-"9
+"54
 [v _madata_isfull madata_isfull `(uc  1 e 1 0 ]
 {
-"14
+"60
 } 0
 "6 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\awmod.c
 [v ___awmod __awmod `(i  1 e 2 0 ]
@@ -863,11 +863,11 @@ TMR6_CLC4_OUT 17
 {
 "93
 } 0
-"177
+"178
 [v _TMR6_SetInterruptHandler TMR6_SetInterruptHandler `(v  1 e 1 0 ]
 {
 [v TMR6_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 3 ]
-"179
+"180
 } 0
 "112 C:\Users\C20590\MPLABXProjects\EMG_TestProject.X\mcc_generated_files/mcc.c
 [v _PMD_Initialize PMD_Initialize `(v  1 e 1 0 ]
@@ -904,17 +904,17 @@ TMR6_CLC4_OUT 17
 {
 "174
 } 0
-"181
+"183
 [v _TMR6_DefaultInterruptHandler TMR6_DefaultInterruptHandler `(v  1 e 1 0 ]
 {
-"184
+"187
 } 0
-"80 C:\Users\C20590\MPLABXProjects\EMG_TestProject.X\main.c
+"66 C:\Users\C20590\MPLABXProjects\EMG_TestProject.X\main.c
 [v _TMR6_EMG_InterruptHandler TMR6_EMG_InterruptHandler `(v  1 e 1 0 ]
 {
-"86
+"77
 [v TMR6_EMG_InterruptHandler@adval adval `ui  1 a 2 0 ]
-"94
+"85
 } 0
 "6 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\lwdiv.c
 [v i1___lwdiv __lwdiv `(ui  1 e 2 0 ]
@@ -925,11 +925,11 @@ TMR6_CLC4_OUT 17
 [v i1___lwdiv@dividend dividend `ui  1 p 2 2 ]
 "31
 } 0
-"25 C:\Users\C20590\MPLABXProjects\EMG_TestProject.X\signal_buffer.c
+"70 C:\Users\C20590\MPLABXProjects\EMG_TestProject.X\signal_buffer.c
 [v _sbuf_insert sbuf_insert `(uc  1 e 1 0 ]
 {
 [v sbuf_insert@element element `ui  1 p 2 8 ]
-"40
+"86
 } 0
 "6 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\awmod.c
 [v i1___awmod __awmod `(i  1 e 2 0 ]
@@ -940,10 +940,10 @@ TMR6_CLC4_OUT 17
 [v i1___awmod@dividend dividend `i  1 p 2 2 ]
 "35
 } 0
-"9 C:\Users\C20590\MPLABXProjects\EMG_TestProject.X\signal_buffer.c
+"52 C:\Users\C20590\MPLABXProjects\EMG_TestProject.X\signal_buffer.c
 [v _sbuf_isfull sbuf_isfull `(uc  1 e 1 0 ]
 {
-"14
+"58
 } 0
 "103 C:\Users\C20590\MPLABXProjects\EMG_TestProject.X\mcc_generated_files/adcc.c
 [v _ADCC_StartConversion ADCC_StartConversion `(v  1 e 1 0 ]

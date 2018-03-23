@@ -1,15 +1,15 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"48 peak_filter.h
+"156 peak_filter.h
 [v _pkdata_insert `(uc ~T0 @X0 0 ef1`ui ]
-"46
+"108
 [v _pkdata_isfull `(uc ~T0 @X0 0 ef ]
-"49
+"180
 [v _pkdata_remove `(uc ~T0 @X0 0 ef ]
-"48 moving_avg_filter.h
+"161 moving_avg_filter.h
 [v _madata_insert `(uc ~T0 @X0 0 ef1`ui ]
-"46
+"109
 [v _madata_isfull `(uc ~T0 @X0 0 ef ]
-"49
+"187
 [v _madata_remove `(uc ~T0 @X0 0 ef ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
@@ -13867,72 +13867,72 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;mcc.h: 71: void SYSTEM_Initialize(void);
 [; ;mcc.h: 84: void OSCILLATOR_Initialize(void);
 [; ;mcc.h: 97: void PMD_Initialize(void);
-"50 signal_buffer.h
+"82 signal_buffer.h
 [v _sb_data `ui ~T0 @X0 -> 50 `i e ]
-[; ;signal_buffer.h: 50: uint16_t sb_data[50];
-"51
+[; ;signal_buffer.h: 82: uint16_t sb_data[50];
+"89
 [v _sb_front `c ~T0 @X0 1 e ]
 [i _sb_front
 -> -U -> 1 `i `c
 ]
-[; ;signal_buffer.h: 51: int8_t sb_front = -1;
-"52
+[; ;signal_buffer.h: 89: int8_t sb_front = -1;
+"90
 [v _sb_rear `c ~T0 @X0 1 e ]
 [i _sb_rear
 -> -U -> 1 `i `c
 ]
-[; ;signal_buffer.h: 52: int8_t sb_rear = -1;
-[; ;signal_buffer.h: 54: bool sbuf_isfull(void);
-[; ;signal_buffer.h: 55: bool sbuf_isempty(void);
-[; ;signal_buffer.h: 56: bool sbuf_insert(uint16_t element);
-[; ;signal_buffer.h: 57: bool sbuf_remove(void);
-[; ;signal_buffer.h: 58: uint16_t sbuf_peek(void);
-"41 moving_avg_filter.h
+[; ;signal_buffer.h: 90: int8_t sb_rear = -1;
+[; ;signal_buffer.h: 118: bool sbuf_isfull(void);
+[; ;signal_buffer.h: 142: bool sbuf_isempty(void);
+[; ;signal_buffer.h: 167: bool sbuf_insert(uint16_t element);
+[; ;signal_buffer.h: 192: bool sbuf_remove(void);
+[; ;signal_buffer.h: 218: uint16_t sbuf_peek(void);
+"71 moving_avg_filter.h
 [v _ma_data `ui ~T0 @X0 + -> * -> -> 50 `i `d .0.5 `i -> 1 `i e ]
-[; ;moving_avg_filter.h: 41: uint16_t ma_data[((int)(50 * 0.5)+1)];
-"42
+[; ;moving_avg_filter.h: 71: uint16_t ma_data[((int)(50 * 0.5)+1)];
+"78
 [v _ma_front `c ~T0 @X0 1 e ]
 [i _ma_front
 -> -U -> 1 `i `c
 ]
-[; ;moving_avg_filter.h: 42: int8_t ma_front = -1;
-"43
+[; ;moving_avg_filter.h: 78: int8_t ma_front = -1;
+"79
 [v _ma_rear `c ~T0 @X0 1 e ]
 [i _ma_rear
 -> -U -> 1 `i `c
 ]
-[; ;moving_avg_filter.h: 43: int8_t ma_rear = -1;
-"44
+[; ;moving_avg_filter.h: 79: int8_t ma_rear = -1;
+"81
 [v _ma_window_sum `ui ~T0 @X0 1 e ]
 [i _ma_window_sum
 -> -> 0 `i `ui
 ]
-[; ;moving_avg_filter.h: 44: uint16_t ma_window_sum = 0;
-[; ;moving_avg_filter.h: 46: bool madata_isfull(void);
-[; ;moving_avg_filter.h: 47: bool madata_isempty(void);
-[; ;moving_avg_filter.h: 48: bool madata_insert(uint16_t element);
-[; ;moving_avg_filter.h: 49: bool madata_remove(void);
-"42 peak_filter.h
+[; ;moving_avg_filter.h: 81: uint16_t ma_window_sum = 0;
+[; ;moving_avg_filter.h: 109: bool madata_isfull(void);
+[; ;moving_avg_filter.h: 135: bool madata_isempty(void);
+[; ;moving_avg_filter.h: 161: bool madata_insert(uint16_t element);
+[; ;moving_avg_filter.h: 187: bool madata_remove(void);
+"72 peak_filter.h
 [v _pk_data `ui ~T0 @X0 + * -> 2 `i / -> 50 `i -> 25 `i -> 1 `i e ]
-[; ;peak_filter.h: 42: uint16_t pk_data[(2*((int)(50 / 25))+1)];
-"43
+[; ;peak_filter.h: 72: uint16_t pk_data[(2*((int)(50 / 25))+1)];
+"79
 [v _pk_front `c ~T0 @X0 1 e ]
 [i _pk_front
 -> -U -> 1 `i `c
 ]
-[; ;peak_filter.h: 43: int8_t pk_front = -1;
-"44
+[; ;peak_filter.h: 79: int8_t pk_front = -1;
+"80
 [v _pk_rear `c ~T0 @X0 1 e ]
 [i _pk_rear
 -> -U -> 1 `i `c
 ]
-[; ;peak_filter.h: 44: int8_t pk_rear = -1;
-[; ;peak_filter.h: 46: bool pkdata_isfull(void);
-[; ;peak_filter.h: 47: bool pkdata_isempty(void);
-[; ;peak_filter.h: 48: bool pkdata_insert(uint16_t element);
-[; ;peak_filter.h: 49: bool pkdata_remove(void);
-[; ;signal_processing.h: 38: uint16_t get_neutral_peaktopeak(uint16_t datapoint);
-[; ;signal_processing.h: 39: float get_moving_average(uint16_t datapoint);
+[; ;peak_filter.h: 80: int8_t pk_rear = -1;
+[; ;peak_filter.h: 108: bool pkdata_isfull(void);
+[; ;peak_filter.h: 132: bool pkdata_isempty(void);
+[; ;peak_filter.h: 156: bool pkdata_insert(uint16_t element);
+[; ;peak_filter.h: 180: bool pkdata_remove(void);
+[; ;signal_processing.h: 76: uint16_t get_neutral_peaktopeak(uint16_t datapoint);
+[; ;signal_processing.h: 99: float get_moving_average(uint16_t datapoint);
 [; ;math.h: 30: extern double fabs(double);
 [; ;math.h: 31: extern double floor(double);
 [; ;math.h: 32: extern double ceil(double);
@@ -14009,123 +14009,139 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdlib.h: 101: extern char * ltoa(char * buf, long val, int base);
 [; ;stdlib.h: 102: extern char * ultoa(char * buf, unsigned long val, int base);
 [; ;stdlib.h: 104: extern char * ftoa(float f, int * status);
-"14 signal_processing.c
+"57 signal_processing.c
 [v _get_neutral_peaktopeak `(ui ~T0 @X0 1 ef1`ui ]
+"58
 {
-[; ;signal_processing.c: 14: uint16_t get_neutral_peaktopeak(uint16_t datapoint) {
+[; ;signal_processing.c: 57: uint16_t get_neutral_peaktopeak(uint16_t datapoint)
+[; ;signal_processing.c: 58: {
 [e :U _get_neutral_peaktopeak ]
+"57
 [v _datapoint `ui ~T0 @X0 1 r1 ]
+"58
 [f ]
-[; ;signal_processing.c: 16: pkdata_insert(datapoint);
-"16
+[; ;signal_processing.c: 60: pkdata_insert(datapoint);
+"60
 [e ( _pkdata_insert (1 _datapoint ]
-[; ;signal_processing.c: 19: if (pkdata_isfull()) {
-"19
+[; ;signal_processing.c: 63: if (pkdata_isfull())
+"63
 [e $ ! != -> ( _pkdata_isfull ..  `i -> -> -> 0 `i `uc `i 1626  ]
+[; ;signal_processing.c: 64: {
+"64
 {
-[; ;signal_processing.c: 20: pkdata_remove();
-"20
+[; ;signal_processing.c: 65: pkdata_remove();
+"65
 [e ( _pkdata_remove ..  ]
-"21
+"66
 }
 [e :U 1626 ]
-"24
+"69
 [v _highest_peak `ui ~T0 @X0 1 a ]
-[; ;signal_processing.c: 21: }
-[; ;signal_processing.c: 24: uint16_t highest_peak = pk_data[pk_front];
+[; ;signal_processing.c: 66: }
+[; ;signal_processing.c: 69: uint16_t highest_peak = pk_data[pk_front];
 [e = _highest_peak *U + &U _pk_data * -> -> _pk_front `uc `ux -> -> # *U &U _pk_data `ui `ux ]
-"25
+"70
 [v _lowest_peak `ui ~T0 @X0 1 a ]
-[; ;signal_processing.c: 25: uint16_t lowest_peak = pk_data[pk_front];
+[; ;signal_processing.c: 70: uint16_t lowest_peak = pk_data[pk_front];
 [e = _lowest_peak *U + &U _pk_data * -> -> _pk_front `uc `ux -> -> # *U &U _pk_data `ui `ux ]
-"26
+"71
 [v _neutral `ui ~T0 @X0 1 a ]
-"28
+"73
 [v _i `uc ~T0 @X0 1 a ]
-[; ;signal_processing.c: 26: uint16_t neutral;
-[; ;signal_processing.c: 28: uint8_t i;
-[; ;signal_processing.c: 31: for (i = pk_front; i != pk_rear; i = (i + 1) % (2*((int)(50 / 25))+1)) {
-"31
+[; ;signal_processing.c: 71: uint16_t neutral;
+[; ;signal_processing.c: 73: uint8_t i;
+[; ;signal_processing.c: 76: for (i = pk_front; i != pk_rear; i = (i + 1) % (2*((int)(50 / 25))+1)) {
+"76
 {
 [e = _i -> _pk_front `uc ]
 [e $U 1630  ]
 [e :U 1627 ]
 {
-[; ;signal_processing.c: 32: if (pk_data[i] > highest_peak) {
-"32
+[; ;signal_processing.c: 77: if (pk_data[i] > highest_peak)
+"77
 [e $ ! > *U + &U _pk_data * -> _i `ux -> -> # *U &U _pk_data `ui `ux _highest_peak 1631  ]
+[; ;signal_processing.c: 78: {
+"78
 {
-[; ;signal_processing.c: 34: highest_peak = pk_data[i];
-"34
+[; ;signal_processing.c: 80: highest_peak = pk_data[i];
+"80
 [e = _highest_peak *U + &U _pk_data * -> _i `ux -> -> # *U &U _pk_data `ui `ux ]
-"35
+"81
 }
 [e :U 1631 ]
-[; ;signal_processing.c: 35: }
-[; ;signal_processing.c: 36: if (pk_data[i] < lowest_peak) {
-"36
+[; ;signal_processing.c: 81: }
+[; ;signal_processing.c: 82: if (pk_data[i] < lowest_peak)
+"82
 [e $ ! < *U + &U _pk_data * -> _i `ux -> -> # *U &U _pk_data `ui `ux _lowest_peak 1632  ]
+[; ;signal_processing.c: 83: {
+"83
 {
-[; ;signal_processing.c: 38: lowest_peak = pk_data[i];
-"38
+[; ;signal_processing.c: 85: lowest_peak = pk_data[i];
+"85
 [e = _lowest_peak *U + &U _pk_data * -> _i `ux -> -> # *U &U _pk_data `ui `ux ]
-"39
+"86
 }
 [e :U 1632 ]
-"40
+"87
 }
-"31
+"76
 [e = _i -> % + -> _i `i -> 1 `i + * -> 2 `i / -> 50 `i -> 25 `i -> 1 `i `uc ]
 [e :U 1630 ]
 [e $ != -> _i `i -> _pk_rear `i 1627  ]
 [e :U 1628 ]
-"40
+"87
 }
-[; ;signal_processing.c: 39: }
-[; ;signal_processing.c: 40: }
-[; ;signal_processing.c: 43: neutral = (highest_peak + lowest_peak) / 2;
-"43
+[; ;signal_processing.c: 86: }
+[; ;signal_processing.c: 87: }
+[; ;signal_processing.c: 90: neutral = (highest_peak + lowest_peak) / 2;
+"90
 [e = _neutral / + _highest_peak _lowest_peak -> -> 2 `i `ui ]
-[; ;signal_processing.c: 44: return neutral;
-"44
+[; ;signal_processing.c: 91: return neutral;
+"91
 [e ) _neutral ]
 [e $UE 1625  ]
-[; ;signal_processing.c: 45: }
-"45
+[; ;signal_processing.c: 92: }
+"92
 [e :UE 1625 ]
 }
-"49
+"99
 [v _get_moving_average `(f ~T0 @X0 1 ef1`ui ]
+"100
 {
-[; ;signal_processing.c: 49: float get_moving_average(uint16_t datapoint) {
+[; ;signal_processing.c: 99: float get_moving_average(uint16_t datapoint)
+[; ;signal_processing.c: 100: {
 [e :U _get_moving_average ]
+"99
 [v _datapoint `ui ~T0 @X0 1 r1 ]
+"100
 [f ]
-[; ;signal_processing.c: 50: madata_insert(datapoint);
-"50
+[; ;signal_processing.c: 101: madata_insert(datapoint);
+"101
 [e ( _madata_insert (1 _datapoint ]
-[; ;signal_processing.c: 52: ma_window_sum += datapoint;
-"52
+[; ;signal_processing.c: 104: ma_window_sum += datapoint;
+"104
 [e =+ _ma_window_sum _datapoint ]
-[; ;signal_processing.c: 54: if (madata_isfull()) {
-"54
+[; ;signal_processing.c: 106: if (madata_isfull())
+"106
 [e $ ! != -> ( _madata_isfull ..  `i -> -> -> 0 `i `uc `i 1634  ]
+[; ;signal_processing.c: 107: {
+"107
 {
-[; ;signal_processing.c: 56: ma_window_sum -= ma_data[ma_front];
-"56
+[; ;signal_processing.c: 109: ma_window_sum -= ma_data[ma_front];
+"109
 [e =- _ma_window_sum *U + &U _ma_data * -> -> _ma_front `uc `ux -> -> # *U &U _ma_data `ui `ux ]
-[; ;signal_processing.c: 57: madata_remove();
-"57
+[; ;signal_processing.c: 110: madata_remove();
+"110
 [e ( _madata_remove ..  ]
-"58
+"111
 }
 [e :U 1634 ]
-[; ;signal_processing.c: 58: }
-[; ;signal_processing.c: 61: return ma_window_sum / (((int)(50 * 0.5)+1)-1);
-"61
+[; ;signal_processing.c: 111: }
+[; ;signal_processing.c: 114: return ma_window_sum / (((int)(50 * 0.5)+1)-1);
+"114
 [e ) -> / _ma_window_sum -> - + -> * -> -> 50 `i `d .0.5 `i -> 1 `i -> 1 `i `ui `f ]
 [e $UE 1633  ]
-[; ;signal_processing.c: 62: }
-"62
+[; ;signal_processing.c: 115: }
+"115
 [e :UE 1633 ]
 }

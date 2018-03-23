@@ -90,19 +90,16 @@ int8_t pk_rear = -1;
 
 /**
   @Function
-    Color_Initialize
-  @Summary
-    Initializes the Color sensor Click Board
-
+    pkdata_isfull
+  
   @Description
-    This routine issues commands to initialize the color sensor click board. The module does a I2C write
-    to the enable the click board.
+    Boolean function returns true if the Peak Buffer is Full by checking the position of the front and rear pointers of the buffer
 
   @Param
     None
 
   @Returns
-    None
+    Type: Boolean 
 
  */
 bool pkdata_isfull(void);
@@ -114,19 +111,16 @@ bool pkdata_isfull(void);
 
 /**
   @Function
-    Color_Initialize
-  @Summary
-    Initializes the Color sensor Click Board
-
+    pkdata_isempty
+  
   @Description
-    This routine issues commands to initialize the color sensor click board. The module does a I2C write
-    to the enable the click board.
+    Boolean function returns true if the Peak Buffer is Empty by checking the position of the front and rear pointers of the buffer
 
   @Param
     None
 
   @Returns
-    None
+    Type: Boolean 
 
  */
 bool pkdata_isempty(void);
@@ -138,19 +132,19 @@ bool pkdata_isempty(void);
 
 /**
   @Function
-    Color_Initialize
-  @Summary
-    Initializes the Color sensor Click Board
-
+    pkdata_insert
+  
   @Description
-    This routine issues commands to initialize the color sensor click board. The module does a I2C write
-    to the enable the click board.
+    Inserts the passed data element into the last index of the Peak Buffer.
+    Boolean function returns false if the Peak Buffer is full and new data cannot be inserted.
+    Returns true if new data passed has been successfully inserted into the Peak Buffer.
 
   @Param
-    None
+    Type : uint16_t
+    Value: Data to be inserted into the Buffer 
 
   @Returns
-    None
+    Type: Boolean 
 
  */
 bool pkdata_insert(uint16_t element);
@@ -162,19 +156,18 @@ bool pkdata_insert(uint16_t element);
 
 /**
   @Function
-    Color_Initialize
-  @Summary
-    Initializes the Color sensor Click Board
-
+    pkdata_remove
+  
   @Description
-    This routine issues commands to initialize the color sensor click board. The module does a I2C write
-    to the enable the click board.
+    Removes the first element from the Circular Buffer(FIFO).
+    Boolean function returns false if the Peak Buffer is Empty and there is no data to remove.
+    Returns true if the first element has been successfully removed from the Peak Buffer.
 
   @Param
     None
-
+ 
   @Returns
-    None
+    Boolean Value
 
  */
 bool pkdata_remove(void);

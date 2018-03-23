@@ -13855,45 +13855,45 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;mcc.h: 71: void SYSTEM_Initialize(void);
 [; ;mcc.h: 84: void OSCILLATOR_Initialize(void);
 [; ;mcc.h: 97: void PMD_Initialize(void);
-"50 signal_buffer.h
+"82 signal_buffer.h
 [v _sb_data `ui ~T0 @X0 -> 50 `i e ]
-[; ;signal_buffer.h: 50: uint16_t sb_data[50];
-"51
+[; ;signal_buffer.h: 82: uint16_t sb_data[50];
+"89
 [v _sb_front `c ~T0 @X0 1 e ]
 [i _sb_front
 -> -U -> 1 `i `c
 ]
-[; ;signal_buffer.h: 51: int8_t sb_front = -1;
-"52
+[; ;signal_buffer.h: 89: int8_t sb_front = -1;
+"90
 [v _sb_rear `c ~T0 @X0 1 e ]
 [i _sb_rear
 -> -U -> 1 `i `c
 ]
-[; ;signal_buffer.h: 52: int8_t sb_rear = -1;
-[; ;signal_buffer.h: 54: bool sbuf_isfull(void);
-[; ;signal_buffer.h: 55: bool sbuf_isempty(void);
-[; ;signal_buffer.h: 56: bool sbuf_insert(uint16_t element);
-[; ;signal_buffer.h: 57: bool sbuf_remove(void);
-[; ;signal_buffer.h: 58: uint16_t sbuf_peek(void);
-"42 peak_filter.h
+[; ;signal_buffer.h: 90: int8_t sb_rear = -1;
+[; ;signal_buffer.h: 118: bool sbuf_isfull(void);
+[; ;signal_buffer.h: 142: bool sbuf_isempty(void);
+[; ;signal_buffer.h: 167: bool sbuf_insert(uint16_t element);
+[; ;signal_buffer.h: 192: bool sbuf_remove(void);
+[; ;signal_buffer.h: 218: uint16_t sbuf_peek(void);
+"72 peak_filter.h
 [v _pk_data `ui ~T0 @X0 + * -> 2 `i / -> 50 `i -> 25 `i -> 1 `i e ]
-[; ;peak_filter.h: 42: uint16_t pk_data[(2*((int)(50 / 25))+1)];
-"43
+[; ;peak_filter.h: 72: uint16_t pk_data[(2*((int)(50 / 25))+1)];
+"79
 [v _pk_front `c ~T0 @X0 1 e ]
 [i _pk_front
 -> -U -> 1 `i `c
 ]
-[; ;peak_filter.h: 43: int8_t pk_front = -1;
-"44
+[; ;peak_filter.h: 79: int8_t pk_front = -1;
+"80
 [v _pk_rear `c ~T0 @X0 1 e ]
 [i _pk_rear
 -> -U -> 1 `i `c
 ]
-[; ;peak_filter.h: 44: int8_t pk_rear = -1;
-[; ;peak_filter.h: 46: bool pkdata_isfull(void);
-[; ;peak_filter.h: 47: bool pkdata_isempty(void);
-[; ;peak_filter.h: 48: bool pkdata_insert(uint16_t element);
-[; ;peak_filter.h: 49: bool pkdata_remove(void);
+[; ;peak_filter.h: 80: int8_t pk_rear = -1;
+[; ;peak_filter.h: 108: bool pkdata_isfull(void);
+[; ;peak_filter.h: 132: bool pkdata_isempty(void);
+[; ;peak_filter.h: 156: bool pkdata_insert(uint16_t element);
+[; ;peak_filter.h: 180: bool pkdata_remove(void);
 [; ;math.h: 30: extern double fabs(double);
 [; ;math.h: 31: extern double floor(double);
 [; ;math.h: 32: extern double ceil(double);
@@ -13970,162 +13970,172 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdlib.h: 101: extern char * ltoa(char * buf, long val, int base);
 [; ;stdlib.h: 102: extern char * ultoa(char * buf, unsigned long val, int base);
 [; ;stdlib.h: 104: extern char * ftoa(float f, int * status);
-"9 peak_filter.c
+"54 peak_filter.c
 [v _pkdata_isfull `(uc ~T0 @X0 1 ef ]
+"55
 {
-[; ;peak_filter.c: 9: bool pkdata_isfull() {
+[; ;peak_filter.c: 54: bool pkdata_isfull(void)
+[; ;peak_filter.c: 55: {
 [e :U _pkdata_isfull ]
 [f ]
-[; ;peak_filter.c: 10: if ((pk_front == pk_rear + 1) || (pk_front == 0 && pk_rear == (2*((int)(50 / 25))+1) - 1))
-"10
+[; ;peak_filter.c: 56: if ((pk_front == pk_rear + 1) || (pk_front == 0 && pk_rear == (2*((int)(50 / 25))+1) - 1))
+"56
 [e $ ! || == -> _pk_front `i + -> _pk_rear `i -> 1 `i && == -> _pk_front `i -> 0 `i == -> _pk_rear `i - + * -> 2 `i / -> 50 `i -> 25 `i -> 1 `i -> 1 `i 1626  ]
-[; ;peak_filter.c: 11: return 1;
-"11
+[; ;peak_filter.c: 57: return 1;
+"57
 [e ) -> -> 1 `i `uc ]
 [e $UE 1625  ]
 [e $U 1627  ]
-"12
+"58
 [e :U 1626 ]
-[; ;peak_filter.c: 12: else
-[; ;peak_filter.c: 13: return 0;
-"13
+[; ;peak_filter.c: 58: else
+[; ;peak_filter.c: 59: return 0;
+"59
 [e ) -> -> 0 `i `uc ]
 [e $UE 1625  ]
 [e :U 1627 ]
-[; ;peak_filter.c: 14: }
-"14
+[; ;peak_filter.c: 60: }
+"60
 [e :UE 1625 ]
 }
-"18
+"63
 [v _pkdata_isempty `(uc ~T0 @X0 1 ef ]
+"64
 {
-[; ;peak_filter.c: 18: bool pkdata_isempty() {
+[; ;peak_filter.c: 63: bool pkdata_isempty(void)
+[; ;peak_filter.c: 64: {
 [e :U _pkdata_isempty ]
 [f ]
-[; ;peak_filter.c: 19: if (pk_front == -1)
-"19
+[; ;peak_filter.c: 65: if (pk_front == -1)
+"65
 [e $ ! == -> _pk_front `i -U -> 1 `i 1629  ]
-[; ;peak_filter.c: 20: return 1;
-"20
+[; ;peak_filter.c: 66: return 1;
+"66
 [e ) -> -> 1 `i `uc ]
 [e $UE 1628  ]
 [e $U 1630  ]
-"21
+"67
 [e :U 1629 ]
-[; ;peak_filter.c: 21: else
-[; ;peak_filter.c: 22: return 0;
-"22
+[; ;peak_filter.c: 67: else
+[; ;peak_filter.c: 68: return 0;
+"68
 [e ) -> -> 0 `i `uc ]
 [e $UE 1628  ]
 [e :U 1630 ]
-[; ;peak_filter.c: 23: }
-"23
+[; ;peak_filter.c: 69: }
+"69
 [e :UE 1628 ]
 }
-"25
+"72
 [v _pkdata_insert `(uc ~T0 @X0 1 ef1`ui ]
+"73
 {
-[; ;peak_filter.c: 25: bool pkdata_insert(uint16_t element) {
+[; ;peak_filter.c: 72: bool pkdata_insert(uint16_t element)
+[; ;peak_filter.c: 73: {
 [e :U _pkdata_insert ]
+"72
 [v _element `ui ~T0 @X0 1 r1 ]
+"73
 [f ]
-[; ;peak_filter.c: 26: if (pkdata_isfull()) {
-"26
+[; ;peak_filter.c: 74: if (pkdata_isfull()) {
+"74
 [e $ ! != -> ( _pkdata_isfull ..  `i -> -> -> 0 `i `uc `i 1632  ]
 {
-[; ;peak_filter.c: 28: return 0;
-"28
+[; ;peak_filter.c: 76: return 0;
+"76
 [e ) -> -> 0 `i `uc ]
 [e $UE 1631  ]
-"29
+"77
 }
-[; ;peak_filter.c: 29: } else {
+[; ;peak_filter.c: 77: } else {
 [e $U 1633  ]
 [e :U 1632 ]
 {
-[; ;peak_filter.c: 30: if (pk_front == -1)
-"30
+[; ;peak_filter.c: 78: if (pk_front == -1)
+"78
 [e $ ! == -> _pk_front `i -U -> 1 `i 1634  ]
-[; ;peak_filter.c: 31: pk_front = 0;
-"31
+[; ;peak_filter.c: 79: pk_front = 0;
+"79
 [e = _pk_front -> -> 0 `i `c ]
 [e :U 1634 ]
-[; ;peak_filter.c: 32: pk_rear = (pk_rear + 1) % (2*((int)(50 / 25))+1);
-"32
+[; ;peak_filter.c: 80: pk_rear = (pk_rear + 1) % (2*((int)(50 / 25))+1);
+"80
 [e = _pk_rear -> % + -> _pk_rear `i -> 1 `i + * -> 2 `i / -> 50 `i -> 25 `i -> 1 `i `c ]
-[; ;peak_filter.c: 33: pk_data[pk_rear] = element;
-"33
+[; ;peak_filter.c: 81: pk_data[pk_rear] = element;
+"81
 [e = *U + &U _pk_data * -> -> _pk_rear `uc `ux -> -> # *U &U _pk_data `ui `ux _element ]
-[; ;peak_filter.c: 34: return 1;
-"34
+[; ;peak_filter.c: 82: return 1;
+"82
 [e ) -> -> 1 `i `uc ]
 [e $UE 1631  ]
-"35
+"83
 }
 [e :U 1633 ]
-[; ;peak_filter.c: 35: }
-[; ;peak_filter.c: 36: }
-"36
+[; ;peak_filter.c: 83: }
+[; ;peak_filter.c: 84: }
+"84
 [e :UE 1631 ]
 }
-"38
+"87
 [v _pkdata_remove `(uc ~T0 @X0 1 ef ]
+"88
 {
-[; ;peak_filter.c: 38: bool pkdata_remove() {
+[; ;peak_filter.c: 87: bool pkdata_remove(void)
+[; ;peak_filter.c: 88: {
 [e :U _pkdata_remove ]
 [f ]
-"39
+"89
 [v _element `ui ~T0 @X0 1 a ]
-[; ;peak_filter.c: 39: uint16_t element;
-[; ;peak_filter.c: 40: if (pkdata_isempty()) {
-"40
+[; ;peak_filter.c: 89: uint16_t element;
+[; ;peak_filter.c: 90: if (pkdata_isempty()) {
+"90
 [e $ ! != -> ( _pkdata_isempty ..  `i -> -> -> 0 `i `uc `i 1636  ]
 {
-[; ;peak_filter.c: 41: return 0;
-"41
+[; ;peak_filter.c: 91: return 0;
+"91
 [e ) -> -> 0 `i `uc ]
 [e $UE 1635  ]
-"42
+"92
 }
-[; ;peak_filter.c: 42: } else {
+[; ;peak_filter.c: 92: } else {
 [e $U 1637  ]
 [e :U 1636 ]
 {
-[; ;peak_filter.c: 43: element = pk_data[pk_front];
-"43
+[; ;peak_filter.c: 93: element = pk_data[pk_front];
+"93
 [e = _element *U + &U _pk_data * -> -> _pk_front `uc `ux -> -> # *U &U _pk_data `ui `ux ]
-[; ;peak_filter.c: 44: if (pk_front == pk_rear) {
-"44
+[; ;peak_filter.c: 94: if (pk_front == pk_rear) {
+"94
 [e $ ! == -> _pk_front `i -> _pk_rear `i 1638  ]
 {
-[; ;peak_filter.c: 45: pk_front = -1;
-"45
+[; ;peak_filter.c: 95: pk_front = -1;
+"95
 [e = _pk_front -> -U -> 1 `i `c ]
-[; ;peak_filter.c: 46: pk_rear = -1;
-"46
+[; ;peak_filter.c: 96: pk_rear = -1;
+"96
 [e = _pk_rear -> -U -> 1 `i `c ]
-"47
+"97
 }
-[; ;peak_filter.c: 47: } else {
+[; ;peak_filter.c: 97: } else {
 [e $U 1639  ]
 [e :U 1638 ]
 {
-[; ;peak_filter.c: 48: pk_front = (pk_front + 1) % (2*((int)(50 / 25))+1);
-"48
+[; ;peak_filter.c: 98: pk_front = (pk_front + 1) % (2*((int)(50 / 25))+1);
+"98
 [e = _pk_front -> % + -> _pk_front `i -> 1 `i + * -> 2 `i / -> 50 `i -> 25 `i -> 1 `i `c ]
-"49
+"99
 }
 [e :U 1639 ]
-[; ;peak_filter.c: 49: }
-[; ;peak_filter.c: 50: return 1;
-"50
+[; ;peak_filter.c: 99: }
+[; ;peak_filter.c: 100: return 1;
+"100
 [e ) -> -> 1 `i `uc ]
 [e $UE 1635  ]
-"51
+"101
 }
 [e :U 1637 ]
-[; ;peak_filter.c: 51: }
-[; ;peak_filter.c: 52: }
-"52
+[; ;peak_filter.c: 101: }
+[; ;peak_filter.c: 102: }
+"102
 [e :UE 1635 ]
 }

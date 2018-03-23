@@ -91,19 +91,16 @@ uint16_t ma_window_sum = 0;
 
 /**
   @Function
-    Color_Initialize
-  @Summary
-    Initializes the Color sensor Click Board
-
+    madata_isfull
+  
   @Description
-    This routine issues commands to initialize the color sensor click board. The module does a I2C write
-    to the enable the click board.
+    Boolean function returns true if the Moving Avg Buffer is Full by checking the position of the front and rear pointers of the buffer
 
   @Param
     None
 
   @Returns
-    None
+    Type: Boolean 
 
  */
 bool madata_isfull(void);
@@ -117,19 +114,16 @@ bool madata_isfull(void);
 
 /**
   @Function
-    Color_Initialize
-  @Summary
-    Initializes the Color sensor Click Board
-
+    madata_isempty
+  
   @Description
-    This routine issues commands to initialize the color sensor click board. The module does a I2C write
-    to the enable the click board.
+    Boolean function returns true if the Moving Avg Buffer is Empty by checking the position of the front and rear pointers of the buffer
 
   @Param
     None
 
   @Returns
-    None
+    Type: Boolean 
 
  */
 bool madata_isempty(void);
@@ -143,19 +137,19 @@ bool madata_isempty(void);
 
 /**
   @Function
-    Color_Initialize
-  @Summary
-    Initializes the Color sensor Click Board
-
+    madata_insert
+  
   @Description
-    This routine issues commands to initialize the color sensor click board. The module does a I2C write
-    to the enable the click board.
+    Inserts the passed data element into the last index of the Moving Avg Buffer.
+    Boolean function returns false if the Moving Avg Buffer is full and new data cannot be inserted.
+    Returns true if new data passed has been successfully inserted into the Moving Avg Buffer.
 
   @Param
-    None
+    Type : uint16_t
+    Value: Data to be inserted into the Buffer 
 
   @Returns
-    None
+    Type: Boolean 
 
  */
 bool madata_insert(uint16_t element);
@@ -169,19 +163,18 @@ bool madata_insert(uint16_t element);
 
 /**
   @Function
-    Color_Initialize
-  @Summary
-    Initializes the Color sensor Click Board
-
+    madata_remove
+  
   @Description
-    This routine issues commands to initialize the color sensor click board. The module does a I2C write
-    to the enable the click board.
+    Removes the first element from the Circular Buffer(FIFO).
+    Boolean function returns false if the Moving Avg Buffer is Empty and there is no data to remove.
+    Returns true if the first element has been successfully removed from the Moving Avg Buffer.
 
   @Param
     None
-
+ 
   @Returns
-    None
+    Boolean Value
 
  */
 bool madata_remove(void);

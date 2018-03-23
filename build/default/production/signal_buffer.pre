@@ -18671,15 +18671,26 @@ void OSCILLATOR_Initialize(void);
 # 97
 void PMD_Initialize(void);
 
-# 50 "signal_buffer.h"
+# 82 "signal_buffer.h"
 uint16_t sb_data[50];
+
+# 89
 int8_t sb_front = -1;
 int8_t sb_rear = -1;
 
+# 118
 bool sbuf_isfull(void);
+
+# 142
 bool sbuf_isempty(void);
+
+# 167
 bool sbuf_insert(uint16_t element);
+
+# 192
 bool sbuf_remove(void);
+
+# 218
 uint16_t sbuf_peek(void);
 
 # 30 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\math.h"
@@ -18779,8 +18790,9 @@ extern char * ultoa(char * buf, unsigned long val, int base);
 
 extern char * ftoa(float f, int * status);
 
-# 9 "signal_buffer.c"
-bool sbuf_isfull() {
+# 52 "signal_buffer.c"
+bool sbuf_isfull(void)
+{
 if ((sb_front == sb_rear + 1) || (sb_front == 0 && sb_rear == 50 - 1))
 return 1;
 else
@@ -18788,7 +18800,8 @@ return 0;
 }
 
 
-bool sbuf_isempty() {
+bool sbuf_isempty(void)
+{
 if (sb_front == -1)
 return 1;
 else
@@ -18796,7 +18809,8 @@ return 0;
 }
 
 
-bool sbuf_insert(uint16_t element) {
+bool sbuf_insert(uint16_t element)
+{
 if (sbuf_isfull()) {
 
 return 0;
@@ -18814,7 +18828,8 @@ return 1;
 }
 
 
-bool sbuf_remove() {
+bool sbuf_remove(void)
+{
 uint16_t element;
 
 if (sbuf_isempty()) {
@@ -18834,6 +18849,8 @@ return 1;
 }
 
 
-uint16_t sbuf_peek(){
+uint16_t sbuf_peek(void)
+{
 return sb_data[sb_front];
 }
+

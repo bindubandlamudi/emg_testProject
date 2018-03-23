@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files (x86)\Microchip\xc8\v1.44\dat\en_msgs.txt -cs \
   -h+dist/default/production\EMG_TestProject.X.production.sym \
   --cmf=dist/default/production\EMG_TestProject.X.production.cmf -z \
-  -Q16F18875 -oC:\Users\C20590\AppData\Local\Temp\s3js.2 \
+  -Q16F18875 -oC:\Users\C20590\AppData\Local\Temp\shhc.2 \
   -Mdist/default/production/EMG_TestProject.X.production.map -E1 -ver=XC8 \
   -ASTACK=020AEh-0238bh -pstack=STACK -ACODE=00h-07FFhx4 \
   -ASTRCODE=00h-01FFFh -ASTRING=00h-0FFhx32 -ACONST=00h-0FFhx32 \
@@ -32,7 +32,7 @@ Linker command line:
   -pconfig=CONFIG -DCONFIG=2 -AIDLOC=08000h-08003h -pidloc=IDLOC -DIDLOC=2 \
   -AEEDATA=00h-0FFh/0F000h -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 \
   -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 -k \
-  C:\Users\C20590\AppData\Local\Temp\s3js.obj \
+  C:\Users\C20590\AppData\Local\Temp\shhc.obj \
   dist/default/production\EMG_TestProject.X.production.obj 
 
 Object code version is 3.11
@@ -42,7 +42,7 @@ Machine type is 16F18875
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\C20590\AppData\Local\Temp\s3js.obj
+C:\Users\C20590\AppData\Local\Temp\shhc.obj
                 end_init                             24       24        2        8       0
                 reset_vec                             0        0        2        0       0
                 config                             8007     8007        5    1000E       0
@@ -1080,7 +1080,7 @@ FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 96 in file "main.c"
+		line 90 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1127,7 +1127,7 @@ Total ram usage:       18 bytes
 
  *************** function _sbuf_remove *****************
  Defined at:
-		line 43 in file "signal_buffer.c"
+		line 89 in file "signal_buffer.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1158,7 +1158,7 @@ Total ram usage:        6 bytes
 
  *************** function _sbuf_isempty *****************
  Defined at:
-		line 17 in file "signal_buffer.c"
+		line 61 in file "signal_buffer.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1188,7 +1188,7 @@ Total ram usage:        0 bytes
 
  *************** function _sbuf_peek *****************
  Defined at:
-		line 63 in file "signal_buffer.c"
+		line 110 in file "signal_buffer.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1317,7 +1317,7 @@ Total ram usage:        2 bytes
 
  *************** function _get_neutral_peaktopeak *****************
  Defined at:
-		line 14 in file "signal_processing.c"
+		line 57 in file "signal_processing.c"
  Parameters:    Size  Location     Type
   datapoint       2   13[BANK0 ] unsigned int 
  Auto vars:     Size  Location     Type
@@ -1353,7 +1353,7 @@ Total ram usage:       13 bytes
 
  *************** function _pkdata_remove *****************
  Defined at:
-		line 38 in file "peak_filter.c"
+		line 87 in file "peak_filter.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1384,7 +1384,7 @@ Total ram usage:        3 bytes
 
  *************** function _pkdata_isempty *****************
  Defined at:
-		line 18 in file "peak_filter.c"
+		line 63 in file "peak_filter.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1414,7 +1414,7 @@ Total ram usage:        0 bytes
 
  *************** function _pkdata_insert *****************
  Defined at:
-		line 25 in file "peak_filter.c"
+		line 72 in file "peak_filter.c"
  Parameters:    Size  Location     Type
   element         2   10[BANK0 ] unsigned int 
  Auto vars:     Size  Location     Type
@@ -1445,7 +1445,7 @@ Total ram usage:        3 bytes
 
  *************** function _pkdata_isfull *****************
  Defined at:
-		line 9 in file "peak_filter.c"
+		line 54 in file "peak_filter.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1476,7 +1476,7 @@ Total ram usage:        4 bytes
 
  *************** function _get_moving_average *****************
  Defined at:
-		line 49 in file "signal_processing.c"
+		line 99 in file "signal_processing.c"
  Parameters:    Size  Location     Type
   datapoint       2   15[BANK0 ] unsigned int 
  Auto vars:     Size  Location     Type
@@ -1510,7 +1510,7 @@ Total ram usage:        5 bytes
 
  *************** function _madata_remove *****************
  Defined at:
-		line 36 in file "moving_avg_filter.c"
+		line 87 in file "moving_avg_filter.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1541,7 +1541,7 @@ Total ram usage:        3 bytes
 
  *************** function _madata_isempty *****************
  Defined at:
-		line 16 in file "moving_avg_filter.c"
+		line 63 in file "moving_avg_filter.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1571,7 +1571,7 @@ Total ram usage:        0 bytes
 
  *************** function _madata_insert *****************
  Defined at:
-		line 23 in file "moving_avg_filter.c"
+		line 72 in file "moving_avg_filter.c"
  Parameters:    Size  Location     Type
   element         2   10[BANK0 ] unsigned int 
  Auto vars:     Size  Location     Type
@@ -1602,7 +1602,7 @@ Total ram usage:        3 bytes
 
  *************** function _madata_isfull *****************
  Defined at:
-		line 9 in file "moving_avg_filter.c"
+		line 54 in file "moving_avg_filter.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1957,7 +1957,7 @@ Total ram usage:        0 bytes
 
  *************** function _TMR6_SetInterruptHandler *****************
  Defined at:
-		line 177 in file "mcc_generated_files/tmr6.c"
+		line 178 in file "mcc_generated_files/tmr6.c"
  Parameters:    Size  Location     Type
   InterruptHan    2    3[BANK0 ] PTR FTN()void 
 		 -> TMR6_DefaultInterruptHandler(1), TMR6_EMG_InterruptHandler(1), 
@@ -2203,7 +2203,7 @@ Total ram usage:        0 bytes
 
  *************** function _TMR6_DefaultInterruptHandler *****************
  Defined at:
-		line 181 in file "mcc_generated_files/tmr6.c"
+		line 183 in file "mcc_generated_files/tmr6.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2233,7 +2233,7 @@ Total ram usage:        0 bytes
 
  *************** function _TMR6_EMG_InterruptHandler *****************
  Defined at:
-		line 80 in file "main.c"
+		line 66 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2298,7 +2298,7 @@ Total ram usage:        8 bytes
 
  *************** function _sbuf_insert *****************
  Defined at:
-		line 25 in file "signal_buffer.c"
+		line 70 in file "signal_buffer.c"
  Parameters:    Size  Location     Type
   element         2    8[COMMON] unsigned int 
  Auto vars:     Size  Location     Type
@@ -2360,7 +2360,7 @@ Total ram usage:        7 bytes
 
  *************** function _sbuf_isfull *****************
  Defined at:
-		line 9 in file "signal_buffer.c"
+		line 52 in file "signal_buffer.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type

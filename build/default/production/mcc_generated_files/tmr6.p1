@@ -14146,28 +14146,28 @@ Version 3.2 HI-TECH Software Intermediate Code
 "174
 [e :UE 1633 ]
 }
-"177
+"178
 [v _TMR6_SetInterruptHandler `(v ~T0 @X0 1 ef1`*F15030 ]
 {
-[; ;tmr6.c: 177: void TMR6_SetInterruptHandler(void (* InterruptHandler)(void)){
+[; ;tmr6.c: 178: void TMR6_SetInterruptHandler(void (* InterruptHandler)(void)){
 [e :U _TMR6_SetInterruptHandler ]
 [v F15056 `(v ~T0 @X0 0 tf ]
 [v _InterruptHandler `*F15056 ~T0 @X0 1 r1 ]
 [f ]
-[; ;tmr6.c: 178: TMR6_InterruptHandler = InterruptHandler;
-"178
-[e = _TMR6_InterruptHandler _InterruptHandler ]
-[; ;tmr6.c: 179: }
+[; ;tmr6.c: 179: TMR6_InterruptHandler = InterruptHandler;
 "179
+[e = _TMR6_InterruptHandler _InterruptHandler ]
+[; ;tmr6.c: 180: }
+"180
 [e :UE 1635 ]
 }
-"181
+"183
 [v _TMR6_DefaultInterruptHandler `(v ~T0 @X0 1 ef ]
 {
-[; ;tmr6.c: 181: void TMR6_DefaultInterruptHandler(void){
+[; ;tmr6.c: 183: void TMR6_DefaultInterruptHandler(void){
 [e :U _TMR6_DefaultInterruptHandler ]
 [f ]
-[; ;tmr6.c: 184: }
-"184
+[; ;tmr6.c: 187: }
+"187
 [e :UE 1636 ]
 }

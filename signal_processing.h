@@ -58,19 +58,19 @@
 
 /**
   @Function
-    Color_Initialize
-  @Summary
-    Initializes the Color sensor Click Board
-
+    get_neutral_peaktopeak
+ 
   @Description
-    This routine issues commands to initialize the color sensor click board. The module does a I2C write
-    to the enable the click board.
+    Returns the Neutral Peak value for every data point inserted in a window of fixed length. 
+    Neutral Value is the Average of the highest and lowest peaks in the given window
 
   @Param
-    None
+    Type: uint16_t
+    Value: New data point acquired from the EMG Signals for neutral peak calculation 
 
   @Returns
-    None
+    Type: uint16_t
+    Value: Neutral Peak 
 
  */
 uint16_t get_neutral_peaktopeak(uint16_t datapoint);
@@ -81,19 +81,19 @@ uint16_t get_neutral_peaktopeak(uint16_t datapoint);
 
 /**
   @Function
-    Color_Initialize
-  @Summary
-    Initializes the Color sensor Click Board
-
+    get_moving_average
+ 
   @Description
-    This routine issues commands to initialize the color sensor click board. The module does a I2C write
-    to the enable the click board.
+    Returns the Moving Average value for every data point inserted in a window of fixed length. 
+    The sum is updated for every new data point added(or/and removed)
 
   @Param
-    None
+    Type: uint16_t
+    Value: New data point acquired from the EMG Signals to calculate a Moving Average for
 
   @Returns
-    None
+    Type: float
+    Value: Moving Average value
 
  */
 float get_moving_average(uint16_t datapoint);

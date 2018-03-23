@@ -18671,25 +18671,45 @@ void OSCILLATOR_Initialize(void);
 # 97
 void PMD_Initialize(void);
 
-# 50 "signal_buffer.h"
+# 82 "signal_buffer.h"
 uint16_t sb_data[50];
+
+# 89
 int8_t sb_front = -1;
 int8_t sb_rear = -1;
 
+# 118
 bool sbuf_isfull(void);
+
+# 142
 bool sbuf_isempty(void);
+
+# 167
 bool sbuf_insert(uint16_t element);
+
+# 192
 bool sbuf_remove(void);
+
+# 218
 uint16_t sbuf_peek(void);
 
-# 42 "peak_filter.h"
+# 72 "peak_filter.h"
 uint16_t pk_data[(2*((int)(50 / 25))+1)];
+
+# 79
 int8_t pk_front = -1;
 int8_t pk_rear = -1;
 
+# 108
 bool pkdata_isfull(void);
+
+# 132
 bool pkdata_isempty(void);
+
+# 156
 bool pkdata_insert(uint16_t element);
+
+# 180
 bool pkdata_remove(void);
 
 # 30 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\math.h"
@@ -18789,8 +18809,9 @@ extern char * ultoa(char * buf, unsigned long val, int base);
 
 extern char * ftoa(float f, int * status);
 
-# 9 "peak_filter.c"
-bool pkdata_isfull() {
+# 54 "peak_filter.c"
+bool pkdata_isfull(void)
+{
 if ((pk_front == pk_rear + 1) || (pk_front == 0 && pk_rear == (2*((int)(50 / 25))+1) - 1))
 return 1;
 else
@@ -18798,15 +18819,17 @@ return 0;
 }
 
 
-
-bool pkdata_isempty() {
+bool pkdata_isempty(void)
+{
 if (pk_front == -1)
 return 1;
 else
 return 0;
 }
 
-bool pkdata_insert(uint16_t element) {
+
+bool pkdata_insert(uint16_t element)
+{
 if (pkdata_isfull()) {
 
 return 0;
@@ -18819,7 +18842,9 @@ return 1;
 }
 }
 
-bool pkdata_remove() {
+
+bool pkdata_remove(void)
+{
 uint16_t element;
 if (pkdata_isempty()) {
 return 0;
@@ -18834,3 +18859,4 @@ pk_front = (pk_front + 1) % (2*((int)(50 / 25))+1);
 return 1;
 }
 }
+

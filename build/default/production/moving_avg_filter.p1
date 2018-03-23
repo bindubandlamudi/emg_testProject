@@ -13855,51 +13855,51 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;mcc.h: 71: void SYSTEM_Initialize(void);
 [; ;mcc.h: 84: void OSCILLATOR_Initialize(void);
 [; ;mcc.h: 97: void PMD_Initialize(void);
-"50 signal_buffer.h
+"82 signal_buffer.h
 [v _sb_data `ui ~T0 @X0 -> 50 `i e ]
-[; ;signal_buffer.h: 50: uint16_t sb_data[50];
-"51
+[; ;signal_buffer.h: 82: uint16_t sb_data[50];
+"89
 [v _sb_front `c ~T0 @X0 1 e ]
 [i _sb_front
 -> -U -> 1 `i `c
 ]
-[; ;signal_buffer.h: 51: int8_t sb_front = -1;
-"52
+[; ;signal_buffer.h: 89: int8_t sb_front = -1;
+"90
 [v _sb_rear `c ~T0 @X0 1 e ]
 [i _sb_rear
 -> -U -> 1 `i `c
 ]
-[; ;signal_buffer.h: 52: int8_t sb_rear = -1;
-[; ;signal_buffer.h: 54: bool sbuf_isfull(void);
-[; ;signal_buffer.h: 55: bool sbuf_isempty(void);
-[; ;signal_buffer.h: 56: bool sbuf_insert(uint16_t element);
-[; ;signal_buffer.h: 57: bool sbuf_remove(void);
-[; ;signal_buffer.h: 58: uint16_t sbuf_peek(void);
-"41 moving_avg_filter.h
+[; ;signal_buffer.h: 90: int8_t sb_rear = -1;
+[; ;signal_buffer.h: 118: bool sbuf_isfull(void);
+[; ;signal_buffer.h: 142: bool sbuf_isempty(void);
+[; ;signal_buffer.h: 167: bool sbuf_insert(uint16_t element);
+[; ;signal_buffer.h: 192: bool sbuf_remove(void);
+[; ;signal_buffer.h: 218: uint16_t sbuf_peek(void);
+"71 moving_avg_filter.h
 [v _ma_data `ui ~T0 @X0 + -> * -> -> 50 `i `d .0.5 `i -> 1 `i e ]
-[; ;moving_avg_filter.h: 41: uint16_t ma_data[((int)(50 * 0.5)+1)];
-"42
+[; ;moving_avg_filter.h: 71: uint16_t ma_data[((int)(50 * 0.5)+1)];
+"78
 [v _ma_front `c ~T0 @X0 1 e ]
 [i _ma_front
 -> -U -> 1 `i `c
 ]
-[; ;moving_avg_filter.h: 42: int8_t ma_front = -1;
-"43
+[; ;moving_avg_filter.h: 78: int8_t ma_front = -1;
+"79
 [v _ma_rear `c ~T0 @X0 1 e ]
 [i _ma_rear
 -> -U -> 1 `i `c
 ]
-[; ;moving_avg_filter.h: 43: int8_t ma_rear = -1;
-"44
+[; ;moving_avg_filter.h: 79: int8_t ma_rear = -1;
+"81
 [v _ma_window_sum `ui ~T0 @X0 1 e ]
 [i _ma_window_sum
 -> -> 0 `i `ui
 ]
-[; ;moving_avg_filter.h: 44: uint16_t ma_window_sum = 0;
-[; ;moving_avg_filter.h: 46: bool madata_isfull(void);
-[; ;moving_avg_filter.h: 47: bool madata_isempty(void);
-[; ;moving_avg_filter.h: 48: bool madata_insert(uint16_t element);
-[; ;moving_avg_filter.h: 49: bool madata_remove(void);
+[; ;moving_avg_filter.h: 81: uint16_t ma_window_sum = 0;
+[; ;moving_avg_filter.h: 109: bool madata_isfull(void);
+[; ;moving_avg_filter.h: 135: bool madata_isempty(void);
+[; ;moving_avg_filter.h: 161: bool madata_insert(uint16_t element);
+[; ;moving_avg_filter.h: 187: bool madata_remove(void);
 [; ;math.h: 30: extern double fabs(double);
 [; ;math.h: 31: extern double floor(double);
 [; ;math.h: 32: extern double ceil(double);
@@ -13976,162 +13976,172 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdlib.h: 101: extern char * ltoa(char * buf, long val, int base);
 [; ;stdlib.h: 102: extern char * ultoa(char * buf, unsigned long val, int base);
 [; ;stdlib.h: 104: extern char * ftoa(float f, int * status);
-"9 moving_avg_filter.c
+"54 moving_avg_filter.c
 [v _madata_isfull `(uc ~T0 @X0 1 ef ]
+"55
 {
-[; ;moving_avg_filter.c: 9: bool madata_isfull() {
+[; ;moving_avg_filter.c: 54: bool madata_isfull(void)
+[; ;moving_avg_filter.c: 55: {
 [e :U _madata_isfull ]
 [f ]
-[; ;moving_avg_filter.c: 10: if ((ma_front == ma_rear + 1) || (ma_front == 0 && ma_rear == ((int)(50 * 0.5)+1) - 1))
-"10
+[; ;moving_avg_filter.c: 56: if ((ma_front == ma_rear + 1) || (ma_front == 0 && ma_rear == ((int)(50 * 0.5)+1) - 1))
+"56
 [e $ ! || == -> _ma_front `i + -> _ma_rear `i -> 1 `i && == -> _ma_front `i -> 0 `i == -> _ma_rear `i - + -> * -> -> 50 `i `d .0.5 `i -> 1 `i -> 1 `i 1626  ]
-[; ;moving_avg_filter.c: 11: return 1;
-"11
+[; ;moving_avg_filter.c: 57: return 1;
+"57
 [e ) -> -> 1 `i `uc ]
 [e $UE 1625  ]
 [e $U 1627  ]
-"12
+"58
 [e :U 1626 ]
-[; ;moving_avg_filter.c: 12: else
-[; ;moving_avg_filter.c: 13: return 0;
-"13
+[; ;moving_avg_filter.c: 58: else
+[; ;moving_avg_filter.c: 59: return 0;
+"59
 [e ) -> -> 0 `i `uc ]
 [e $UE 1625  ]
 [e :U 1627 ]
-[; ;moving_avg_filter.c: 14: }
-"14
+[; ;moving_avg_filter.c: 60: }
+"60
 [e :UE 1625 ]
 }
-"16
+"63
 [v _madata_isempty `(uc ~T0 @X0 1 ef ]
+"64
 {
-[; ;moving_avg_filter.c: 16: bool madata_isempty() {
+[; ;moving_avg_filter.c: 63: bool madata_isempty(void)
+[; ;moving_avg_filter.c: 64: {
 [e :U _madata_isempty ]
 [f ]
-[; ;moving_avg_filter.c: 17: if (ma_front == -1)
-"17
+[; ;moving_avg_filter.c: 65: if (ma_front == -1)
+"65
 [e $ ! == -> _ma_front `i -U -> 1 `i 1629  ]
-[; ;moving_avg_filter.c: 18: return 1;
-"18
+[; ;moving_avg_filter.c: 66: return 1;
+"66
 [e ) -> -> 1 `i `uc ]
 [e $UE 1628  ]
 [e $U 1630  ]
-"19
+"67
 [e :U 1629 ]
-[; ;moving_avg_filter.c: 19: else
-[; ;moving_avg_filter.c: 20: return 0;
-"20
+[; ;moving_avg_filter.c: 67: else
+[; ;moving_avg_filter.c: 68: return 0;
+"68
 [e ) -> -> 0 `i `uc ]
 [e $UE 1628  ]
 [e :U 1630 ]
-[; ;moving_avg_filter.c: 21: }
-"21
+[; ;moving_avg_filter.c: 69: }
+"69
 [e :UE 1628 ]
 }
-"23
+"72
 [v _madata_insert `(uc ~T0 @X0 1 ef1`ui ]
+"73
 {
-[; ;moving_avg_filter.c: 23: bool madata_insert(uint16_t element) {
+[; ;moving_avg_filter.c: 72: bool madata_insert(uint16_t element)
+[; ;moving_avg_filter.c: 73: {
 [e :U _madata_insert ]
+"72
 [v _element `ui ~T0 @X0 1 r1 ]
+"73
 [f ]
-[; ;moving_avg_filter.c: 24: if (madata_isfull()) {
-"24
+[; ;moving_avg_filter.c: 74: if (madata_isfull()) {
+"74
 [e $ ! != -> ( _madata_isfull ..  `i -> -> -> 0 `i `uc `i 1632  ]
 {
-[; ;moving_avg_filter.c: 26: return 0;
-"26
+[; ;moving_avg_filter.c: 76: return 0;
+"76
 [e ) -> -> 0 `i `uc ]
 [e $UE 1631  ]
-"27
+"77
 }
-[; ;moving_avg_filter.c: 27: } else {
+[; ;moving_avg_filter.c: 77: } else {
 [e $U 1633  ]
 [e :U 1632 ]
 {
-[; ;moving_avg_filter.c: 28: if (ma_front == -1)
-"28
+[; ;moving_avg_filter.c: 78: if (ma_front == -1)
+"78
 [e $ ! == -> _ma_front `i -U -> 1 `i 1634  ]
-[; ;moving_avg_filter.c: 29: ma_front = 0;
-"29
+[; ;moving_avg_filter.c: 79: ma_front = 0;
+"79
 [e = _ma_front -> -> 0 `i `c ]
 [e :U 1634 ]
-[; ;moving_avg_filter.c: 30: ma_rear = (ma_rear + 1) % ((int)(50 * 0.5)+1);
-"30
+[; ;moving_avg_filter.c: 80: ma_rear = (ma_rear + 1) % ((int)(50 * 0.5)+1);
+"80
 [e = _ma_rear -> % + -> _ma_rear `i -> 1 `i + -> * -> -> 50 `i `d .0.5 `i -> 1 `i `c ]
-[; ;moving_avg_filter.c: 31: ma_data[ma_rear] = element;
-"31
+[; ;moving_avg_filter.c: 81: ma_data[ma_rear] = element;
+"81
 [e = *U + &U _ma_data * -> -> _ma_rear `uc `ux -> -> # *U &U _ma_data `ui `ux _element ]
-[; ;moving_avg_filter.c: 32: return 1;
-"32
+[; ;moving_avg_filter.c: 82: return 1;
+"82
 [e ) -> -> 1 `i `uc ]
 [e $UE 1631  ]
-"33
+"83
 }
 [e :U 1633 ]
-[; ;moving_avg_filter.c: 33: }
-[; ;moving_avg_filter.c: 34: }
-"34
+[; ;moving_avg_filter.c: 83: }
+[; ;moving_avg_filter.c: 84: }
+"84
 [e :UE 1631 ]
 }
-"36
+"87
 [v _madata_remove `(uc ~T0 @X0 1 ef ]
+"88
 {
-[; ;moving_avg_filter.c: 36: bool madata_remove() {
+[; ;moving_avg_filter.c: 87: bool madata_remove(void)
+[; ;moving_avg_filter.c: 88: {
 [e :U _madata_remove ]
 [f ]
-"37
+"89
 [v _element `ui ~T0 @X0 1 a ]
-[; ;moving_avg_filter.c: 37: uint16_t element;
-[; ;moving_avg_filter.c: 38: if (madata_isempty()) {
-"38
+[; ;moving_avg_filter.c: 89: uint16_t element;
+[; ;moving_avg_filter.c: 90: if (madata_isempty()) {
+"90
 [e $ ! != -> ( _madata_isempty ..  `i -> -> -> 0 `i `uc `i 1636  ]
 {
-[; ;moving_avg_filter.c: 39: return 0;
-"39
+[; ;moving_avg_filter.c: 91: return 0;
+"91
 [e ) -> -> 0 `i `uc ]
 [e $UE 1635  ]
-"40
+"92
 }
-[; ;moving_avg_filter.c: 40: } else {
+[; ;moving_avg_filter.c: 92: } else {
 [e $U 1637  ]
 [e :U 1636 ]
 {
-[; ;moving_avg_filter.c: 41: element = ma_data[ma_front];
-"41
+[; ;moving_avg_filter.c: 93: element = ma_data[ma_front];
+"93
 [e = _element *U + &U _ma_data * -> -> _ma_front `uc `ux -> -> # *U &U _ma_data `ui `ux ]
-[; ;moving_avg_filter.c: 42: if (ma_front == ma_rear) {
-"42
+[; ;moving_avg_filter.c: 94: if (ma_front == ma_rear) {
+"94
 [e $ ! == -> _ma_front `i -> _ma_rear `i 1638  ]
 {
-[; ;moving_avg_filter.c: 43: ma_front = -1;
-"43
+[; ;moving_avg_filter.c: 95: ma_front = -1;
+"95
 [e = _ma_front -> -U -> 1 `i `c ]
-[; ;moving_avg_filter.c: 44: ma_rear = -1;
-"44
+[; ;moving_avg_filter.c: 96: ma_rear = -1;
+"96
 [e = _ma_rear -> -U -> 1 `i `c ]
-"45
+"97
 }
-[; ;moving_avg_filter.c: 45: } else {
+[; ;moving_avg_filter.c: 97: } else {
 [e $U 1639  ]
 [e :U 1638 ]
 {
-[; ;moving_avg_filter.c: 46: ma_front = (ma_front + 1) % ((int)(50 * 0.5)+1);
-"46
+[; ;moving_avg_filter.c: 98: ma_front = (ma_front + 1) % ((int)(50 * 0.5)+1);
+"98
 [e = _ma_front -> % + -> _ma_front `i -> 1 `i + -> * -> -> 50 `i `d .0.5 `i -> 1 `i `c ]
-"47
+"99
 }
 [e :U 1639 ]
-[; ;moving_avg_filter.c: 47: }
-[; ;moving_avg_filter.c: 48: return 1;
-"48
+[; ;moving_avg_filter.c: 99: }
+[; ;moving_avg_filter.c: 100: return 1;
+"100
 [e ) -> -> 1 `i `uc ]
 [e $UE 1635  ]
-"49
+"101
 }
 [e :U 1637 ]
-[; ;moving_avg_filter.c: 49: }
-[; ;moving_avg_filter.c: 50: }
-"50
+[; ;moving_avg_filter.c: 101: }
+[; ;moving_avg_filter.c: 102: }
+"102
 [e :UE 1635 ]
 }

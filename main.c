@@ -40,6 +40,9 @@
     TERMS.
 */
 
+/**
+  Section: Included Files
+*/
 #include "mcc_generated_files/mcc.h"
 #include "peak_filter.h"
 #include "moving_avg_filter.h"
@@ -60,8 +63,6 @@ uint8_t i;
 // Flags to indicate the character sent over UART to the Slave PIC
 uint8_t sent_1 =0;
 uint8_t sent_0 =0;
-
-
 
 // Custom Interrupt Handler to acquire data from ADC
 // Refer to files tmr6.c and tmr6.h for Timer Interrupt working
@@ -114,12 +115,12 @@ void main(void)
     TMR6_SetInterruptHandler(TMR6_EMG_InterruptHandler);
     TMR6_Start();
     
-    int count = 0;          //Counter for number of data points in signal buffer
+    int count = 0;                               //Counter for number of data points in signal buffer
     uint16_t datapoint;
     uint16_t neutral_datapoint, result;
-    uint8_t mode = 0;       //Mode of Action of Prosthetic prototype
+    uint8_t mode = 0;                            //Mode of Action of Prosthetic prototype
     double time_elapsed;    
-    uint8_t flex_flag, motor_started; //Flags set after events
+    uint8_t flex_flag, motor_started;            //Flags set after events
     
     //Initialize flags
     flex_flag = 0;
@@ -141,9 +142,9 @@ void main(void)
         }
          
 		// When the flag is cleared and Switch-2 is pressed, the process starts
-        if (START_RC5_GetValue() == 0 && start_flag == 0) {
-            
-            //Uncomment the line below to
+        if (START_RC5_GetValue() == 0 && start_flag == 0) 
+        {
+            //Uncomment the line below for sending data to MikroPlot
             //printf("START\r\n");
             start_flag = 1;
             __delay_ms(700);

@@ -18594,11 +18594,14 @@ TMR6_InterruptHandler();
 }
 
 
+
 void TMR6_SetInterruptHandler(void (* InterruptHandler)(void)){
 TMR6_InterruptHandler = InterruptHandler;
 }
 
+
 void TMR6_DefaultInterruptHandler(void){
+
 
 
 }

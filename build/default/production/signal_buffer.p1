@@ -13855,26 +13855,26 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;mcc.h: 71: void SYSTEM_Initialize(void);
 [; ;mcc.h: 84: void OSCILLATOR_Initialize(void);
 [; ;mcc.h: 97: void PMD_Initialize(void);
-"50 signal_buffer.h
+"82 signal_buffer.h
 [v _sb_data `ui ~T0 @X0 -> 50 `i e ]
-[; ;signal_buffer.h: 50: uint16_t sb_data[50];
-"51
+[; ;signal_buffer.h: 82: uint16_t sb_data[50];
+"89
 [v _sb_front `c ~T0 @X0 1 e ]
 [i _sb_front
 -> -U -> 1 `i `c
 ]
-[; ;signal_buffer.h: 51: int8_t sb_front = -1;
-"52
+[; ;signal_buffer.h: 89: int8_t sb_front = -1;
+"90
 [v _sb_rear `c ~T0 @X0 1 e ]
 [i _sb_rear
 -> -U -> 1 `i `c
 ]
-[; ;signal_buffer.h: 52: int8_t sb_rear = -1;
-[; ;signal_buffer.h: 54: bool sbuf_isfull(void);
-[; ;signal_buffer.h: 55: bool sbuf_isempty(void);
-[; ;signal_buffer.h: 56: bool sbuf_insert(uint16_t element);
-[; ;signal_buffer.h: 57: bool sbuf_remove(void);
-[; ;signal_buffer.h: 58: uint16_t sbuf_peek(void);
+[; ;signal_buffer.h: 90: int8_t sb_rear = -1;
+[; ;signal_buffer.h: 118: bool sbuf_isfull(void);
+[; ;signal_buffer.h: 142: bool sbuf_isempty(void);
+[; ;signal_buffer.h: 167: bool sbuf_insert(uint16_t element);
+[; ;signal_buffer.h: 192: bool sbuf_remove(void);
+[; ;signal_buffer.h: 218: uint16_t sbuf_peek(void);
 [; ;math.h: 30: extern double fabs(double);
 [; ;math.h: 31: extern double floor(double);
 [; ;math.h: 32: extern double ceil(double);
@@ -13951,180 +13951,192 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdlib.h: 101: extern char * ltoa(char * buf, long val, int base);
 [; ;stdlib.h: 102: extern char * ultoa(char * buf, unsigned long val, int base);
 [; ;stdlib.h: 104: extern char * ftoa(float f, int * status);
-"9 signal_buffer.c
+"52 signal_buffer.c
 [v _sbuf_isfull `(uc ~T0 @X0 1 ef ]
+"53
 {
-[; ;signal_buffer.c: 9: bool sbuf_isfull() {
+[; ;signal_buffer.c: 52: bool sbuf_isfull(void)
+[; ;signal_buffer.c: 53: {
 [e :U _sbuf_isfull ]
 [f ]
-[; ;signal_buffer.c: 10: if ((sb_front == sb_rear + 1) || (sb_front == 0 && sb_rear == 50 - 1))
-"10
+[; ;signal_buffer.c: 54: if ((sb_front == sb_rear + 1) || (sb_front == 0 && sb_rear == 50 - 1))
+"54
 [e $ ! || == -> _sb_front `i + -> _sb_rear `i -> 1 `i && == -> _sb_front `i -> 0 `i == -> _sb_rear `i - -> 50 `i -> 1 `i 1626  ]
-[; ;signal_buffer.c: 11: return 1;
-"11
+[; ;signal_buffer.c: 55: return 1;
+"55
 [e ) -> -> 1 `i `uc ]
 [e $UE 1625  ]
 [e $U 1627  ]
-"12
+"56
 [e :U 1626 ]
-[; ;signal_buffer.c: 12: else
-[; ;signal_buffer.c: 13: return 0;
-"13
+[; ;signal_buffer.c: 56: else
+[; ;signal_buffer.c: 57: return 0;
+"57
 [e ) -> -> 0 `i `uc ]
 [e $UE 1625  ]
 [e :U 1627 ]
-[; ;signal_buffer.c: 14: }
-"14
+[; ;signal_buffer.c: 58: }
+"58
 [e :UE 1625 ]
 }
-"17
+"61
 [v _sbuf_isempty `(uc ~T0 @X0 1 ef ]
+"62
 {
-[; ;signal_buffer.c: 17: bool sbuf_isempty() {
+[; ;signal_buffer.c: 61: bool sbuf_isempty(void)
+[; ;signal_buffer.c: 62: {
 [e :U _sbuf_isempty ]
 [f ]
-[; ;signal_buffer.c: 18: if (sb_front == -1)
-"18
+[; ;signal_buffer.c: 63: if (sb_front == -1)
+"63
 [e $ ! == -> _sb_front `i -U -> 1 `i 1629  ]
-[; ;signal_buffer.c: 19: return 1;
-"19
+[; ;signal_buffer.c: 64: return 1;
+"64
 [e ) -> -> 1 `i `uc ]
 [e $UE 1628  ]
 [e $U 1630  ]
-"20
+"65
 [e :U 1629 ]
-[; ;signal_buffer.c: 20: else
-[; ;signal_buffer.c: 21: return 0;
-"21
+[; ;signal_buffer.c: 65: else
+[; ;signal_buffer.c: 66: return 0;
+"66
 [e ) -> -> 0 `i `uc ]
 [e $UE 1628  ]
 [e :U 1630 ]
-[; ;signal_buffer.c: 22: }
-"22
+[; ;signal_buffer.c: 67: }
+"67
 [e :UE 1628 ]
 }
-"25
+"70
 [v _sbuf_insert `(uc ~T0 @X0 1 ef1`ui ]
+"71
 {
-[; ;signal_buffer.c: 25: bool sbuf_insert(uint16_t element) {
+[; ;signal_buffer.c: 70: bool sbuf_insert(uint16_t element)
+[; ;signal_buffer.c: 71: {
 [e :U _sbuf_insert ]
+"70
 [v _element `ui ~T0 @X0 1 r1 ]
+"71
 [f ]
-[; ;signal_buffer.c: 26: if (sbuf_isfull()) {
-"26
+[; ;signal_buffer.c: 72: if (sbuf_isfull()) {
+"72
 [e $ ! != -> ( _sbuf_isfull ..  `i -> -> -> 0 `i `uc `i 1632  ]
 {
-[; ;signal_buffer.c: 28: return 0;
-"28
+[; ;signal_buffer.c: 74: return 0;
+"74
 [e ) -> -> 0 `i `uc ]
 [e $UE 1631  ]
-"29
+"75
 }
-[; ;signal_buffer.c: 29: }
+[; ;signal_buffer.c: 75: }
 [e $U 1633  ]
-"31
+"77
 [e :U 1632 ]
-[; ;signal_buffer.c: 31: else {
+[; ;signal_buffer.c: 77: else {
 {
-[; ;signal_buffer.c: 33: if (sb_front == -1)
-"33
+[; ;signal_buffer.c: 79: if (sb_front == -1)
+"79
 [e $ ! == -> _sb_front `i -U -> 1 `i 1634  ]
-[; ;signal_buffer.c: 34: sb_front = 0;
-"34
+[; ;signal_buffer.c: 80: sb_front = 0;
+"80
 [e = _sb_front -> -> 0 `i `c ]
 [e :U 1634 ]
-[; ;signal_buffer.c: 36: sb_rear = (sb_rear + 1) % 50;
-"36
+[; ;signal_buffer.c: 82: sb_rear = (sb_rear + 1) % 50;
+"82
 [e = _sb_rear -> % + -> _sb_rear `i -> 1 `i -> 50 `i `c ]
-[; ;signal_buffer.c: 37: sb_data[sb_rear] = element;
-"37
+[; ;signal_buffer.c: 83: sb_data[sb_rear] = element;
+"83
 [e = *U + &U _sb_data * -> -> _sb_rear `uc `ux -> -> # *U &U _sb_data `ui `ux _element ]
-[; ;signal_buffer.c: 38: return 1;
-"38
+[; ;signal_buffer.c: 84: return 1;
+"84
 [e ) -> -> 1 `i `uc ]
 [e $UE 1631  ]
-"39
+"85
 }
 [e :U 1633 ]
-[; ;signal_buffer.c: 39: }
-[; ;signal_buffer.c: 40: }
-"40
+[; ;signal_buffer.c: 85: }
+[; ;signal_buffer.c: 86: }
+"86
 [e :UE 1631 ]
 }
-"43
+"89
 [v _sbuf_remove `(uc ~T0 @X0 1 ef ]
+"90
 {
-[; ;signal_buffer.c: 43: bool sbuf_remove() {
+[; ;signal_buffer.c: 89: bool sbuf_remove(void)
+[; ;signal_buffer.c: 90: {
 [e :U _sbuf_remove ]
 [f ]
-"44
+"91
 [v _element `ui ~T0 @X0 1 a ]
-[; ;signal_buffer.c: 44: uint16_t element;
-[; ;signal_buffer.c: 46: if (sbuf_isempty()) {
-"46
+[; ;signal_buffer.c: 91: uint16_t element;
+[; ;signal_buffer.c: 93: if (sbuf_isempty()) {
+"93
 [e $ ! != -> ( _sbuf_isempty ..  `i -> -> -> 0 `i `uc `i 1636  ]
 {
-[; ;signal_buffer.c: 47: return 0;
-"47
+[; ;signal_buffer.c: 94: return 0;
+"94
 [e ) -> -> 0 `i `uc ]
 [e $UE 1635  ]
-"48
+"95
 }
-[; ;signal_buffer.c: 48: }
+[; ;signal_buffer.c: 95: }
 [e $U 1637  ]
-"50
+"97
 [e :U 1636 ]
-[; ;signal_buffer.c: 50: else {
+[; ;signal_buffer.c: 97: else {
 {
-[; ;signal_buffer.c: 51: element = sb_data[sb_front];
-"51
+[; ;signal_buffer.c: 98: element = sb_data[sb_front];
+"98
 [e = _element *U + &U _sb_data * -> -> _sb_front `uc `ux -> -> # *U &U _sb_data `ui `ux ]
-[; ;signal_buffer.c: 52: if (sb_front == sb_rear) {
-"52
+[; ;signal_buffer.c: 99: if (sb_front == sb_rear) {
+"99
 [e $ ! == -> _sb_front `i -> _sb_rear `i 1638  ]
 {
-[; ;signal_buffer.c: 53: sb_front = -1;
-"53
+[; ;signal_buffer.c: 100: sb_front = -1;
+"100
 [e = _sb_front -> -U -> 1 `i `c ]
-[; ;signal_buffer.c: 54: sb_rear = -1;
-"54
+[; ;signal_buffer.c: 101: sb_rear = -1;
+"101
 [e = _sb_rear -> -U -> 1 `i `c ]
-"55
+"102
 }
-[; ;signal_buffer.c: 55: } else {
+[; ;signal_buffer.c: 102: } else {
 [e $U 1639  ]
 [e :U 1638 ]
 {
-[; ;signal_buffer.c: 56: sb_front = (sb_front + 1) % 50;
-"56
+[; ;signal_buffer.c: 103: sb_front = (sb_front + 1) % 50;
+"103
 [e = _sb_front -> % + -> _sb_front `i -> 1 `i -> 50 `i `c ]
-"57
+"104
 }
 [e :U 1639 ]
-[; ;signal_buffer.c: 57: }
-[; ;signal_buffer.c: 58: return 1;
-"58
+[; ;signal_buffer.c: 104: }
+[; ;signal_buffer.c: 105: return 1;
+"105
 [e ) -> -> 1 `i `uc ]
 [e $UE 1635  ]
-"59
+"106
 }
 [e :U 1637 ]
-[; ;signal_buffer.c: 59: }
-[; ;signal_buffer.c: 60: }
-"60
+[; ;signal_buffer.c: 106: }
+[; ;signal_buffer.c: 107: }
+"107
 [e :UE 1635 ]
 }
-"63
+"110
 [v _sbuf_peek `(ui ~T0 @X0 1 ef ]
+"111
 {
-[; ;signal_buffer.c: 63: uint16_t sbuf_peek(){
+[; ;signal_buffer.c: 110: uint16_t sbuf_peek(void)
+[; ;signal_buffer.c: 111: {
 [e :U _sbuf_peek ]
 [f ]
-[; ;signal_buffer.c: 64: return sb_data[sb_front];
-"64
+[; ;signal_buffer.c: 112: return sb_data[sb_front];
+"112
 [e ) *U + &U _sb_data * -> -> _sb_front `uc `ux -> -> # *U &U _sb_data `ui `ux ]
 [e $UE 1640  ]
-[; ;signal_buffer.c: 65: }
-"65
+[; ;signal_buffer.c: 113: }
+"113
 [e :UE 1640 ]
 }

@@ -94,8 +94,8 @@ uint16_t get_neutral_peaktopeak(uint16_t datapoint)
 /*******************************************************************************************************/
 /*******************************************************************************************************/
 
-// Moving Average Filter Returns the average of data points present in the "Moving Average Buffer"
-// The sum in updated for every new data point added(or/and removed)
+// Moving Average Filter returns the average of data points present in the "Moving Average Buffer"
+// The sum is updated for every new data point added(or/and removed)
 float get_moving_average(uint16_t datapoint)
 {
     madata_insert(datapoint);
